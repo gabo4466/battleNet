@@ -14,7 +14,9 @@ include "includes/head.php";
         include "includes/navbar.php";
         ?>
         <section>
-
+            <div>
+                <h2>HOLASOY FRAN</h2>
+            </div>
 
         </section>
         <?php
