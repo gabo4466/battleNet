@@ -15,7 +15,7 @@ include "includes/head.php";
         ?>
         <section>
             <div>
-                <h2>HOLASOY FRAN</h2>
+                <h2>HOLASOY FRANXD</h2>
             </div>
 
         </section>
