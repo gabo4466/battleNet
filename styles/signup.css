@@ -1,0 +1,23 @@
+input{
+    background: none;
+    outline: 0;
+    flex-grow: 1;
+    border: 1px rgba(0, 116, 224, 0.47) solid;
+    border-radius: 1px;
+    position: relative;
+}
+ button{
+    background: none;
+    outline: 0;
+    flex-grow: 1;
+    border: 1px rgba(0, 116, 224, 0.47) solid;
+    border-radius: 1px;
+    position: relative;
+}
+
+#formSignUp{
+    display: inline-flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+}
