@@ -6,31 +6,21 @@ if (isset($_POST["submit"])){
     include "../model/SignUp.php";
     include "../model/SignUpValidator.php";
 
+    // Recoger Data
+    $name = $_POST["name"];
+    $nif = $_POST["nif"];
+    $address = $_POST["address"];
+    $email = $_POST["email"];
+    $nickname = $_POST["nickname"];
+    $pwd = $_POST["pwd"];
+    $pwdRepeat = $_POST["pwdrepeat"];
+
+    // Instancia de objetos para validar la entrada
     $db = new DBConnection();
-    $validator = new SignUpValidator();
+    $validator = new SignUpValidator($name, $nif, $address, $email, $nickname, $pwd, $pwdRepeat);
 
-    if($validator->emptyInput() !== false){
-        header("location: ../signup.php?error=emptyinput");
-        exit();
-    }
-    if($validator->invalidName() !== false){
-        header("location: ../signup.php?error=invalidname");
-        exit();
-    }
-    if($validator->invalidNickname() !== false){
-        header("location: ../signup.php?error=invalidnickname");
-        exit();
-    }
-    if($validator->invalidEmail() !== false){
-        header("location: ../signup.php?error=invalidemail");
-        exit();
-    }
-    if($validator->pwdMatch() !== false){
-        header("location: ../signup.php?error=pwdmatch");
-        exit();
-    }
-
-
+    // Controlar errores
+    $validator->signUpUser();
 
 }else{
     header("location: ../signup.php");

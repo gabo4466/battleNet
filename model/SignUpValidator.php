@@ -10,17 +10,46 @@ class SignUpValidator {
     private $pwdRepeat;
 
     public function __construct($name, $nif, $address, $email, $nickname, $pwd, $pwdRepeat) {
-        $this->name = trim($name);
-        $this->nif = trim($nif);
-        $this->address = trim($address);
-        $this->email = trim($email);
+        $this->name = strtolower(trim($name));
+        $this->nif = strtoupper(trim($nif));
+        $this->address = strtolower(trim($address));
+        $this->email = strtolower(trim($email));
         $this->nickname = trim($nickname);
-        $this->pwd = trim($pwd);
-        $this->pwdRepeat = trim($pwdRepeat);
+        $this->pwd = $pwd;
+        $this->pwdRepeat = $pwdRepeat;
     }
 
+
+    public function signUpUser(){
+        if($this->emptyInput() == false){
+            header("location: ../signup.php?error=emptyinput");
+            exit();
+        }
+        if ($this->invalidName() == false){
+            header("location: ../signup.php?error=invalidname");
+            exit();
+        }
+        if ($this->invalidNickname() == false){
+            header("location: ../signup.php?error=invalidnickname");
+            exit();
+        }
+        if ($this->invalidEmail() == false){
+            header("location: ../signup.php?error=invalidemail");
+            exit();
+        }
+        if ($this->pwdMatch() == false){
+            header("location: ../signup.php?error=pwdmatch");
+            exit();
+        }
+
+    }
+
+    /**
+     * Metodo que comprueba que ningun campo este vacio
+     * @return bool
+     */
     public function emptyInput(){
-        if (empty($name) || empty($nif) || empty($address) || empty($email) || empty($nickname) || empty($pwd) || empty($pwdRepeat)){
+        if (empty($this->name) || empty($this->nif) || empty($this->address) || empty($this->email) || empty($this->nickname) || empty($this->pwd) || empty($this->pwdRepeat)){
             $result = false;
         }else{
             $result = true;
@@ -33,7 +62,7 @@ class SignUpValidator {
      * @return bool
      */
     public function invalidName(){
-        if (preg_match("/^[a-zA-Z\s]+$/", $this->name)){
+        if (!preg_match("/^[a-zA-Z\s]+$/", $this->name)){
             $result = false;
         }else{
             $result = true;
@@ -46,14 +75,13 @@ class SignUpValidator {
      * @return bool
      */
     public function invalidNickname(){
-        if (preg_match("/^[a-zA-Z0-9\s]+$/", $this->name)){
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $this->nickname)){
             $result = false;
         }else{
             $result = true;
         }
         return $result;
     }
-
 
     /**
      * Comprueba que el email sea valido
@@ -80,8 +108,5 @@ class SignUpValidator {
         }
         return $result;
     }
-
-
-
 
 }

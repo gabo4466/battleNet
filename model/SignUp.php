@@ -1,6 +1,6 @@
 <?php
-require_once ("DBConnection.php");
-class SignUp {
+include ("DBConnection.php");
+class SignUp extends DBConnection {
     private $name;
     private $nif;
     private $address;
@@ -24,6 +24,9 @@ class SignUp {
         $this->nickname = $nickname;
         $this->pwd = $pwd;
     }
+
+
+
 
 
 
