@@ -1,6 +1,6 @@
 <?php
 
-class Validator {
+class SignUpValidator {
 
 
     public function __construct() {
