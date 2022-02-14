@@ -1,6 +1,6 @@
 <?php
 require_once ("DBConnection.php");
-class User {
+class SignUp {
     private $id;
     private $name;
     private $nif;

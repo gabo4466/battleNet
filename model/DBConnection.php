@@ -1,5 +1,5 @@
 <?php
-require_once ("User.php");
+
 class DBConnection {
     private $server     = "localhost";
     private $usuario    = "root";
@@ -17,7 +17,4 @@ class DBConnection {
         }
     }
 
-    public function insertUser(User $user){
-
-    }
 }
