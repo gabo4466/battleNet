@@ -7,24 +7,16 @@ include "includes/head.php";
 <body>
 
 
-<div id="pageContainer">
-    <div id="wrapContent">
-        <?php
-        include "includes/header.php";
-        include "includes/navbar.php";
-        ?>
-        <section>
-            <div>
-                <h2>HOLASOY FRANXD NNN</h2>
-            </div>
-
-        </section>
-        <?php
-        include "includes/footer.php";
-        ?>
-    </div>
-
-</div>
+<?php
+include "includes/header.php";
+include "includes/navbar.php";
+?>
+<section>
+    <h1>INDEX</h1>
+</section>
+<?php
+include "includes/footer.php";
+?>
 
 
 

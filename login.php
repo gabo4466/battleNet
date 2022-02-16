@@ -8,31 +8,23 @@ include "includes/head.php";
 <body>
 
 
-<div id="pageContainer">
-    <div id="wrapContent">
-        <?php
-        include "includes/header.php";
-        include "includes/navbar.php";
-        ?>
-        <section>
-            <h2>Inicia sesión</h2>
-            <form action="signup.controller.php" method="post">
-                <div id="formSignUp">
-                    <input type="text" name="email" placeholder="Correo...">
-                    <input type="password" name="pwd" placeholder="Contrase&#241;a...">
-                    <button type="submit" name="submit">Iniciar sesión</button>
-                </div>
-            </form>
-        </section>
-        <?php
-        include "includes/footer.php";
-        ?>
-    </div>
-
-</div>
-
-
-
+<?php
+include "includes/header.php";
+include "includes/navbar.php";
+?>
+<section>
+    <h2>Inicia sesión</h2>
+    <form action="signup.controller.php" method="post">
+        <div id="formSignUp">
+            <input type="text" name="email" placeholder="Correo...">
+            <input type="password" name="pwd" placeholder="Contrase&#241;a...">
+            <button type="submit" name="submit">Iniciar sesión</button>
+        </div>
+    </form>
+</section>
+<?php
+include "includes/footer.php";
+?>
 
 </body>
 </html>

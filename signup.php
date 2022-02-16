@@ -8,15 +8,15 @@ include "includes/head.php";
 <body>
 
 
-<div id="pageContainer">
-    <div id="wrapContent">
-        <?php
-        include "includes/header.php";
-        include "includes/navbar.php";
-        ?>
-        <section>
-            <h2>Regístrate</h2>
+
+    <?php
+    include "includes/header.php";
+    include "includes/navbar.php";
+    ?>
+    <section>
+        <div id="signUp">
             <form action="controller/signup.controller.php" method="post">
+            <h2>Regístrate</h2>
                 <div id="formSignUp">
                     <input type="text" name="name" placeholder="Nombre...">
                     <input type="text" name="email" placeholder="Correo...">
@@ -28,16 +28,11 @@ include "includes/head.php";
                     <button type="submit" name="submit" value="1">Registrar</button>
                 </div>
             </form>
-        </section>
-        <?php
-        include "includes/footer.php";
-        ?>
-    </div>
-
-</div>
-
-
-
+        </div>
+    </section>
+    <?php
+    include "includes/footer.php";
+    ?>
 
 </body>
 </html>
