@@ -1,0 +1,100 @@
+create database battlenet;
+use battlenet;
+
+create table users (
+id_users int not null auto_increment,
+users_name varchar (128) not null,
+users_nif varchar (15) not null,
+users_address varchar (128) not null,
+users_email varchar (128) not null,
+users_nickname varchar (128) not null,
+users_password varchar (128) not null,
+PRIMARY KEY (id_users)
+);
+
+create table products (
+id_products int not null auto_increment,
+products_name varchar (128) not null,
+products_prize double not null,
+products_stock int not null,
+products_img varchar (128) not null,
+PRIMARY KEY (id_products)
+);
+
+create table users_wants_products (
+id_users_wants_products int not null auto_increment,
+fk_users int not null,
+fk_products int not null,
+FOREIGN KEY (fk_users) REFERENCES users (id_users),
+FOREIGN KEY (fk_products) REFERENCES products (id_products),
+PRIMARY KEY (id_users_wants_products)
+);
+
+create table users_has_products (
+id_users_has_products int not null auto_increment,
+fk_users int not null,
+fk_products int not null,
+FOREIGN KEY (fk_users) REFERENCES users (id_users),
+FOREIGN KEY (fk_products) REFERENCES products (id_products),
+purchase_date date not null,
+PRIMARY KEY (id_users_has_products)
+);
+
+create table employees (
+id_employees int not null auto_increment,
+employees_name varchar (128) not null,
+employees_nif varchar (15) not null,
+employees_address varchar (128) not null,
+employees_email varchar (128) not null,
+employees_password varchar (128) not null,
+PRIMARY KEY (id_employees)
+);
+
+create table incidences (
+id_incidences int not null auto_increment,
+incidences_content varchar (500) not null,
+fk_users int not null,
+fk_employees int not null,
+FOREIGN KEY (fk_users) REFERENCES users (id_users),
+FOREIGN KEY (fk_employees) REFERENCES employees (id_employees),
+PRIMARY KEY (id_incidences)
+);
+
+create table news (
+id_news int not null auto_increment,
+news_content varchar (500) not null,
+news_title varchar (128) not null,
+fk_employees int not null,
+FOREIGN KEY (fk_employees) REFERENCES employees (id_employees),
+PRIMARY KEY (id_news)
+);
+
+create table channels (
+id_channels int not null auto_increment,
+channels_name varchar (128) not null,
+channels_description varchar (128) not null,
+fk_employees int not null,
+FOREIGN KEY (fk_employees) REFERENCES employees (id_employees),
+PRIMARY KEY (id_channels)
+);
+
+create table threads (
+id_threads int not null auto_increment,
+threads_name varchar (128) not null,
+threads_description varchar (128) not null,
+fk_channels int not null,
+fk_users int not null,
+FOREIGN KEY (fk_channels) REFERENCES channels (id_channels),
+FOREIGN KEY (fk_users) REFERENCES users (id_users),
+PRIMARY KEY (id_threads)
+);
+
+create table comments (
+id_comments int not null auto_increment,
+comments_content varchar (500) not null,
+fk_threads int not null,
+fk_users int not null,
+FOREIGN KEY (fk_threads) REFERENCES threads (id_threads),
+FOREIGN KEY (fk_users) REFERENCES users (id_users),
+PRIMARY KEY (id_comments)
+);

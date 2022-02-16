@@ -47,10 +47,11 @@ section{
     grid-area: form;
     display: flex;
     justify-content: center;
+    height: fit-content;
 }
 
 #signUp form{
-    height: fit-content;
+
     border: 3px #fff solid;
     border-radius: 5px;
     padding: 10px;
@@ -58,14 +59,6 @@ section{
 }
 
 
-@media screen and (min-device-width: 1366px){
-
-    section{
-        grid-template-columns: 1fr 1366px 1fr;
-        grid-template-areas: ". form .";
-    }
-
-}
 @media screen and (min-device-width: 600px){
 
     #signUp form{
@@ -75,6 +68,14 @@ section{
 
     section{
         grid-template-columns: 1fr 600px 1fr;
+        grid-template-areas: ". form .";
+    }
+
+}
+@media screen and (min-device-width: 1366px){
+
+    section{
+        grid-template-columns: 1fr 1366px 1fr;
         grid-template-areas: ". form .";
     }
 
