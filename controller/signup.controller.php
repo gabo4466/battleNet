@@ -14,6 +14,7 @@ if (isset($_POST["submit"])){
     $nickname = $_POST["nickname"];
     $pwd = $_POST["pwd"];
     $pwdRepeat = $_POST["pwdrepeat"];
+    
 
     // Instancia de objetos para validar la entrada
     //$db = new DBConnection();
