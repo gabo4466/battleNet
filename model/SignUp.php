@@ -1,5 +1,5 @@
 <?php
-include ("DBConnection.php");
+require_once ("DBConnection.php");
 class SignUp extends DBConnection {
     private $name;
     private $nif;
