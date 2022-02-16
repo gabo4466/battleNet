@@ -16,8 +16,50 @@ input{
 }
 
 #formSignUp{
-    display: inline-flex;
-    flex-direction: column;
-    flex-grow: 1;
+    margin: auto;
+    display: flex;
+    flex-flow: column wrap;
     justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+}
+
+h2{
+    margin-bottom: 15px;
+}
+
+input{
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+    ".      ."
+    "form   form";
+
+}
+#signUp{
+    grid-area: form;
+    display: flex;
+    justify-content: center;
+}
+
+#signUp form{
+
+    border: 3px #fff solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+@media screen and (min-device-width: 1366px){
+
+    section{
+        grid-template-columns: 1fr 1366px 1fr;
+        grid-template-areas: ". form .";
+    }
+
 }

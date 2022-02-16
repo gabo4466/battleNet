@@ -5,14 +5,47 @@
     color: #fff;
 }
 
-#pageContainer{
-    position: relative;
-    min-height: 100vh;
+body{
     background-color: #15171E;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0 auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "nav    nav"
+        "section    section"
+        "foot   foot";
 }
-#wrapContent{
-    padding-bottom: 10%;
+/*
+**********************************
+    HEADER
+**********************************
+ */
+
+header{
+    grid-area: header;
 }
+
+/*
+**********************************
+    FIN HEADER
+**********************************
+ */
+/*
+**********************************
+    section
+**********************************
+ */
+
+section{
+    grid-area: section;
+}
+
+/*
+**********************************
+    FIN section
+**********************************
+ */
 /*
 **********************************
     BARRA NAVEGACION
@@ -20,6 +53,7 @@
  */
 
 nav{
+    grid-area: nav;
     margin-bottom: 2%;
     display: flex;
     flex-flow: row wrap;
@@ -64,13 +98,11 @@ nav a:hover{
  */
 
 footer{
+    grid-area: foot;
     border-top: 1px solid #FFFFFF3D;
     background: #3b3b3b;
-
     width: 100%;
     margin-top: 5%;
-    position: absolute;
-    bottom: 0;
     padding: 15px 0;
 
 }
@@ -78,6 +110,14 @@ footer p{
     text-align: center;
     margin: 0;
     color: #7C808C;
+}
+
+@media screen and (min-device-width: 1366px){
+
+    footer{
+
+    }
+
 }
 /*
 **********************************
