@@ -16,7 +16,7 @@ include "includes/head.php";
     <section>
         <div id="signUp">
             <form action="controller/signup.controller.php" method="post">
-            <h2>Regístrate</h2>
+                <h2>Regístrate</h2>
                 <div id="formSignUp">
                     <input type="text" name="name" placeholder="Nombre...">
                     <input type="text" name="email" placeholder="Correo...">
