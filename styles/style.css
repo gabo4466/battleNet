@@ -39,6 +39,7 @@ header{
 
 section{
     grid-area: section;
+    display: grid;
 }
 
 /*
