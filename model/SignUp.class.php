@@ -1,9 +1,9 @@
 <?php
-require_once ("DBConnection.php");
+require_once("DBConnection.class.php");
 class SignUp extends DBConnection {
 
     /**
-     * Metodo que comprueba que no exista un usuario con el email que se desea utilizar para el nuevo usuario
+     * Metodo que comprueba no exista otro usuario con el email
      * @param $id_users
      * @param $email
      * @return bool|void

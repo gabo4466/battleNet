@@ -1,5 +1,5 @@
 <?php
-
+// Comprobar que el usuario venga por la ruta correcta (submit del formulario de registro)
 if (isset($_POST["submit"])){
 
     // Recoger Data
@@ -12,10 +12,8 @@ if (isset($_POST["submit"])){
     $pwdRepeat = $_POST["pwdrepeat"];
 
     // Instancia de objetos para validar la entrada
-    require_once "../model/DBConnection.php";
-    require_once "../model/SignUp.php";
-    require_once "../model/SignUpValidator.php";
-    //$db = new DBConnection();
+    require_once "../model/SignUpValidator.class.php";
+
     $validator = new SignUpValidator($name, $nif, $address, $email, $nickname, $pwd, $pwdRepeat);
 
     // Controlar errores

@@ -1,5 +1,5 @@
 <?php
-
+require_once("SignUp.class.php");
 class SignUpValidator extends SignUp {
 
     private $name;
@@ -21,7 +21,9 @@ class SignUpValidator extends SignUp {
         $this->pwdRepeat = $pwdRepeat;
     }
 
-
+    /**
+     * Metodo que valida todos los campos y llama al metodo para guardar el usuario en base de datos
+     */
     public function signUpUser(){
         if($this->emptyInput() == false){
             header("location: ../signup.php?error=emptyinput");
@@ -116,6 +118,10 @@ class SignUpValidator extends SignUp {
         return $result;
     }
 
+    /**
+     * Metodo que verifica que el email no haya sido utilizado
+     * @return bool
+     */
     public function emailTaken(){
         if (!$this->checkEmail($this->email)){
             $result = false;
