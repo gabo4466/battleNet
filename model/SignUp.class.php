@@ -1,5 +1,6 @@
 <?php
 require_once("DBConnection.class.php");
+require_once ("User.class.php");
 class SignUp extends DBConnection {
 
     /**
@@ -26,18 +27,13 @@ class SignUp extends DBConnection {
 
     /**
      * Metodo que inserta el usuario en la base de datos
-     * @param $name
-     * @param $nif
-     * @param $address
-     * @param $email
-     * @param $nickname
-     * @param $pwd
+     * @param $user
      */
-    protected function insertUser($name, $nif, $address, $email, $nickname, $pwd){
+    protected function insertUser($user, $pwd){
         $stmt = $this->connect()->prepare('INSERT INTO users (users_name, users_nif, users_address, users_email, users_nickname, users_password) VALUES (?, ?, ?, ?, ?, ?);');
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-        if (!$stmt->execute(array($name, $nif, $address, $email, $nickname, $hashedPwd))){
+        if (!$stmt->execute(array($user->getName(), $user->getNif(), $user->getAddress(), $user->getEmail(), $user->getNickname(), $hashedPwd))){
             $stmt = null;
             header("location: ../signup.php?error=stmtfailed");
             exit();
