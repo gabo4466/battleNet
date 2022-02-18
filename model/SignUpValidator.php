@@ -1,6 +1,7 @@
 <?php
 
-class SignUpValidator {
+class SignUpValidator extends SignUp {
+
     private $name;
     private $nif;
     private $address;
@@ -10,6 +11,7 @@ class SignUpValidator {
     private $pwdRepeat;
 
     public function __construct($name, $nif, $address, $email, $nickname, $pwd, $pwdRepeat) {
+
         $this->name = strtolower(trim($name));
         $this->nif = strtoupper(trim($nif));
         $this->address = strtolower(trim($address));
@@ -41,6 +43,11 @@ class SignUpValidator {
             header("location: ../signup.php?error=pwdmatch");
             exit();
         }
+        if ($this->emailTaken() == false){
+            header("location: ../signup.php?error=invalidemail");
+            exit();
+        }
+        $this->insertUser($this->name, $this->nif, $this->address, $this->email, $this->nickname, $this->pwd);
 
     }
 
@@ -102,6 +109,15 @@ class SignUpValidator {
      */
     public function pwdMatch(){
         if ($this->pwd !== $this->pwdRepeat){
+            $result = false;
+        }else{
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function emailTaken(){
+        if (!$this->checkEmail($this->email)){
             $result = false;
         }else{
             $result = true;
