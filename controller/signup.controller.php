@@ -14,12 +14,14 @@ if (isset($_POST["submit"])){
 
     // Instancia de objetos para validar la entrada
     require_once "../model/SignUpValidator.class.php";
+    require_once "../model/User.class.php";
 
-    $validator = new SignUpValidator($name, $nif, $address, $email, $nickname, $pwd, $pwdRepeat);
+    $user = new User($name, $nif, $address, $email, $nickname);
+    $validator = new SignUpValidator($user, $pwd, $pwdRepeat);
 
     // Controlar errores
     $validator->signUpUser();
-    header("location: ../index.php?error=none");
+    header("location: ../signup.php?error=none");
 
 }else{
     header("location: ../signup.php");

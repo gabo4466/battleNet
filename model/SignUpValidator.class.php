@@ -1,22 +1,14 @@
 <?php
 require_once("SignUp.class.php");
+require_once ("User.class.php");
 class SignUpValidator extends SignUp {
 
-    private $name;
-    private $nif;
-    private $address;
-    private $email;
-    private $nickname;
+    private $user;
     private $pwd;
     private $pwdRepeat;
 
-    public function __construct($name, $nif, $address, $email, $nickname, $pwd, $pwdRepeat) {
-
-        $this->name = strtolower(trim($name));
-        $this->nif = strtoupper(trim($nif));
-        $this->address = strtolower(trim($address));
-        $this->email = strtolower(trim($email));
-        $this->nickname = trim($nickname);
+    public function __construct(User $user ,$pwd, $pwdRepeat) {
+        $this->user = $user;
         $this->pwd = $pwd;
         $this->pwdRepeat = $pwdRepeat;
     }
@@ -49,7 +41,7 @@ class SignUpValidator extends SignUp {
             header("location: ../signup.php?error=invalidemail");
             exit();
         }
-        $this->insertUser($this->name, $this->nif, $this->address, $this->email, $this->nickname, $this->pwd);
+        $this->insertUser($this->user, $this->pwd);
 
     }
 
@@ -58,7 +50,7 @@ class SignUpValidator extends SignUp {
      * @return bool
      */
     public function emptyInput(){
-        if (empty($this->name) || empty($this->nif) || empty($this->address) || empty($this->email) || empty($this->nickname) || empty($this->pwd) || empty($this->pwdRepeat)){
+        if (empty($this->user->getName()) || empty($this->user->getNif()) || empty($this->user->getAddress()) || empty($this->user->getEmail()) || empty($this->user->getNickname()) || empty($this->pwd) || empty($this->pwdRepeat)){
             $result = false;
         }else{
             $result = true;
@@ -71,7 +63,7 @@ class SignUpValidator extends SignUp {
      * @return bool
      */
     public function invalidName(){
-        if (!preg_match("/^[a-zA-Z\s]+$/", $this->name)){
+        if (!preg_match("/^[a-zA-Z\s]+$/", $this->user->getName())){
             $result = false;
         }else{
             $result = true;
@@ -84,7 +76,7 @@ class SignUpValidator extends SignUp {
      * @return bool
      */
     public function invalidNickname(){
-        if (!preg_match("/^[a-zA-Z0-9]+$/", $this->nickname)){
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $this->user->getNickname())){
             $result = false;
         }else{
             $result = true;
@@ -97,7 +89,7 @@ class SignUpValidator extends SignUp {
      * @return bool
      */
     public function invalidEmail(){
-        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)){
+        if (!filter_var($this->user->getEmail(), FILTER_VALIDATE_EMAIL)){
             $result = false;
         }else{
             $result = true;
@@ -123,7 +115,7 @@ class SignUpValidator extends SignUp {
      * @return bool
      */
     public function emailTaken(){
-        if (!$this->checkEmail($this->email)){
+        if (!$this->checkEmail($this->user->getEmail())){
             $result = false;
         }else{
             $result = true;
