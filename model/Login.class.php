@@ -8,28 +8,30 @@ class Login extends DBConnection {
 
         if (!$stmt->execute(array($email))){
             $stmt = null;
-            header("location: ../signup.php?error=stmtfailed");
+            header("location: ../login.php?error=stmtfailed");
             exit();
         }
         if ($stmt->rowCount() == 0){
-            header("location: ../signup.php?error=usernotfound");
+            header("location: ../login.php?error=usernotfound");
             exit();
         }
 
         $hashedPwd = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         $checkPwd = password_verify($pwd, $hashedPwd[0]["users_password"]);
         if ($checkPwd == false){
-            header("location: ../signup.php?error=usernotfound");
+            header("location: ../login.php?error=usernotfound");
             exit();
         }else if($checkPwd == true){
             $stmt = $this->connect()->prepare('SELECT * FROM users WHERE users_email = ? AND users_password = ?;');
             if (!$stmt->execute(array($email, $pwd))){
                 $stmt = null;
-                header("location: ../signup.php?error=stmtfailed");
+                header("location: ../login.php?error=stmtfailed");
                 exit();
             }
             if ($stmt->rowCount() == 0){
-                header("location: ../signup.php?error=usernotfound");
+                echo "me cago en todo";
+                //header("location: ../login.php?error=usernotfound");
                 exit();
             }
             $userAux = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -10,6 +10,7 @@ if (isset($_POST["submit"])){
     $nickname = $_POST["nickname"];
     $pwd = $_POST["pwd"];
     $pwdRepeat = $_POST["pwdrepeat"];
+    
 
     // Instancia de objetos para validar la entrada
     require_once "../model/SignUpValidator.class.php";
