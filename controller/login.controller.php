@@ -13,7 +13,7 @@ if (isset($_POST["submit"])){
 
     // Controlar errores
     $validator->loginUser();
-    //header("location: ../index.php?error=none");
+    header("location: ../index.php?error=none");
 
 }else{
     header("location: ../signup.php");
