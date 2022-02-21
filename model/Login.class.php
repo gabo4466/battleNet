@@ -38,9 +38,9 @@ class Login extends DBConnection {
                 header("location: ../login.php?error=usernotfound");
                 exit();
             }
+            session_start();
             $userAux = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $user = new User($userAux[0]["users_name"], $userAux[0]["users_nif"], $userAux[0]["users_address"], $userAux[0]["users_email"], $userAux[0]["users_nickname"], $userAux[0]["id_users"]);
-            session_start();
             $_SESSION["userId"] = $user->getId();
             $_SESSION["userName"] = $user->getName();
             $_SESSION["userEmail"] = $user->getEmail();

@@ -1,4 +1,5 @@
 <?php
+
 // Comprobar que el usuario venga por la ruta correcta (submit del formulario de login)
 if (isset($_POST["submit"])){
 
