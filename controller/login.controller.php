@@ -8,7 +8,6 @@ if (isset($_POST["submit"])){
 
     // Instancia de objetos para validar la entrada
     require_once "../model/LoginValidator.class.php";
-    require_once "../model/User.class.php";
     $validator = new LoginValidator($email, $pwd);
 
     // Controlar errores

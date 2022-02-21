@@ -3,6 +3,11 @@ require_once ("DBConnection.class.php");
 require_once ("User.class.php");
 class Login extends DBConnection {
 
+    /**
+     * Metodo que realiza el login, en caso de que este sea correcto inicia la sesion
+     * @param $email
+     * @param $pwd
+     */
     protected function getUser($email, $pwd){
         $stmt = $this->connect()->prepare('SELECT users_password FROM users WHERE users_email = ?;');
 
