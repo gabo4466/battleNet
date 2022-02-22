@@ -11,12 +11,21 @@ section {
 
     display: grid;
     background-image: url("../img/darkPortal.png");
+    background-position: center;
     grid-template-columns: 10% 80% 10%;
     grid-template-rows: 1fr 60%;
     grid-template-areas:
     ". login ."
     ". . .";
 
+}
+
+@media screen and (min-device-width: 425px){
+
+    section {
+        background-image: url("../img/darkPortal2.png");
+
+    }
 
 }
 
@@ -30,6 +39,8 @@ h2 {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-area: login;
+    justify-self: center;
+    align-self: center;
 }
 
 #formLogin {
@@ -47,20 +58,20 @@ h2 {
     border: 3px rgb(244, 190, 42) solid;
     padding: 20px;
     border-radius: 5px;
+    width: 300px;
+    background: rgba(59, 59, 59, 0.49);
 }
 
 
 input {
     padding: 5px;
     margin-bottom: 5px;
-    background: none;
     flex-grow: 2;
+    background: rgba(21, 23, 30, 0.84) none;
+    border: #0074E0 2px solid;
+    border-radius: 5px;
+    width: 100%;
 
-}
-
-::placeholder {
-
-    color: #ffffff;
 }
 
 button {
@@ -74,6 +85,21 @@ button {
 /**
 tamaño Tablet (de 600 px a 1365px)
  */
+@media screen and (min-device-width: 600px){
+
+
+    #login form {
+
+        padding: 40px;
+        width: 500px;
+    }
+
+    section {
+        background-image: url("../img/heroesBlizzard.jpg");
+
+    }
+
+}
 
 
 /**
@@ -81,23 +107,6 @@ tamaño Escritorio
  */
 @media screen and (min-device-width: 1366px) {
 
-    section {
 
-        display: grid;
-        background-image: url("../images/heroesBlizzard2.jpeg");
-        grid-template-columns: 33% 33% 33%;
-        grid-template-rows: 20% 50% 20%;
-        grid-template-areas:
-    ". login ."
-    ". . ."
-    ". . .";
-
-    }
-
-    #login form {
-
-
-        background: url("../images/darkPortal.jpg");
-    }
 
 }
