@@ -15,7 +15,7 @@ include "includes/navbar.php";
 <section>
 
     <div id="login">
-        <form action="signup.controller.php" method="post">
+        <form action="controller/login.controller.php" method="post">
             <h2>Inicia sesión</h2>
             <div id="formLogin">
                 <input type="text" name="email" placeholder="Correo...">
