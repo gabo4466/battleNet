@@ -55,7 +55,6 @@ section{
 
 nav{
     grid-area: nav;
-    margin-bottom: 2%;
     display: none;
 
 }
@@ -112,7 +111,6 @@ footer{
     border-top: 1px solid #FFFFFF3D;
     background: #3b3b3b;
     width: 100%;
-    margin-top: 5%;
     padding: 15px 0;
 
 }
