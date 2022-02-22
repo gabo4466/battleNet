@@ -4,18 +4,17 @@
 }
 
 /**
-tamaño smartphone
+tamaño smartphone (hasta 599px)
  */
 
 section {
 
     display: grid;
-    background-image: url("../images/heroesMobile.jpg");
+    background-image: url("../img/darkPortal.png");
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 1fr 60% 1fr;
+    grid-template-rows: 1fr 60%;
     grid-template-areas:
     ". login ."
-    ". . ."
     ". . .";
 
 
@@ -45,9 +44,9 @@ h2 {
 #login form {
 
     margin-top: 20px;
-    border: 3px rgba(203, 201, 22, 0.67) solid;
+    border: 3px rgb(244, 190, 42) solid;
     padding: 20px;
-    background: url("../images/darkPortal2.jpg");
+    border-radius: 5px;
 }
 
 
@@ -69,7 +68,12 @@ button {
     flex-grow: 2;
     border: 1px rgba(0, 116, 224, 0.47) solid;
     padding: 10px;
+    border-radius: 5px;
 }
+
+/**
+tamaño Tablet (de 600 px a 1365px)
+ */
 
 
 /**
@@ -92,8 +96,7 @@ tamaño Escritorio
 
     #login form {
 
-        border: 3px rgba(203, 201, 22, 0.67) solid;
-        padding: 20px;
+
         background: url("../images/darkPortal.jpg");
     }
 
