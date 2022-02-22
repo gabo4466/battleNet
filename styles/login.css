@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/**
+tamaño smartphone
+ */
+
+section {
+
+    display: grid;
+    background-image: url("../images/heroesMobile.jpg");
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 1fr 60% 1fr;
+    grid-template-areas:
+    ". login ."
+    ". . ."
+    ". . .";
+
+
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#login {
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-area: login;
+}
+
+#formLogin {
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#login form {
+
+    margin-top: 20px;
+    border: 3px rgba(203, 201, 22, 0.67) solid;
+    padding: 20px;
+    background: url("../images/darkPortal2.jpg");
+}
+
+
+input {
+    padding: 5px;
+    margin-bottom: 5px;
+    background: none;
+    flex-grow: 2;
+
+}
+
+::placeholder {
+
+    color: #ffffff;
+}
+
+button {
+    background-color: #0074E0;
+    flex-grow: 2;
+    border: 1px rgba(0, 116, 224, 0.47) solid;
+    padding: 10px;
+}
+
+
+/**
+tamaño Escritorio
+ */
+@media screen and (min-device-width: 1366px) {
+
+    section {
+
+        display: grid;
+        background-image: url("../images/heroesBlizzard2.jpeg");
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 20% 50% 20%;
+        grid-template-areas:
+    ". login ."
+    ". . ."
+    ". . .";
+
+    }
+
+    #login form {
+
+        border: 3px rgba(203, 201, 22, 0.67) solid;
+        padding: 20px;
+        background: url("../images/darkPortal.jpg");
+    }
+
+}
