@@ -1,9 +1,16 @@
+.navOption{
+    background: #60727c;
+}
+.navOption:hover{
+    background: #b86437;
+}
 input{
     background: none;
     outline: 0;
     flex-grow: 1;
-    border: 1px rgba(0, 116, 224, 0.47) solid;
-    border-radius: 1px;
+    background: rgba(21, 23, 30, 0.84) none;
+    border: #0074E0 2px solid;
+    border-radius: 5px;
     position: relative;
 }
  button{
@@ -36,6 +43,8 @@ input{
     width: 100%;
 }
 section{
+    background-image: url("../img/shadowLands.jpg");
+    background-position: center;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 50px 1fr;
     grid-template-areas:
@@ -51,8 +60,8 @@ section{
 }
 
 #signUp form{
-
-    border: 3px #fff solid;
+    background-color: rgba(169, 176, 178, 0.4);
+    border: 3px #545e67 solid;
     border-radius: 5px;
     padding: 10px;
     width: 300px;
