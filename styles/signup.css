@@ -1,9 +1,4 @@
-.navOption{
-    background: #60727c;
-}
-.navOption:hover{
-    background: #b86437;
-}
+
 input{
     background: none;
     outline: 0;
@@ -52,6 +47,12 @@ section{
     ". . .";
 
 }
+
+body{
+    background-image: url("../img/shadowLands.jpg");
+    background-position: center;
+}
+
 #signUp{
     grid-area: form;
     display: flex;
@@ -77,6 +78,12 @@ section{
     #signUp form{
         width: 500px;
         padding: 40px;
+    }
+    .navOption{
+        background: #60727c;
+    }
+    .navOption:hover{
+        background: #b86437;
     }
 
 
