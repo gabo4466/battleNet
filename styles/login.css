@@ -36,10 +36,9 @@ h2 {
 
 #login {
 
-    grid-column-start: 2;
-    grid-column-end: 3;
+    display: flex;
     grid-area: login;
-    justify-self: center;
+    justify-content: center;
     align-self: center;
 }
 
