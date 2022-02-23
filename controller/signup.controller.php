@@ -3,14 +3,14 @@
 if (isset($_POST["submit"])){
 
     // Recoger Data
-    $name = $_POST["name"];
-    $nif = $_POST["nif"];
-    $address = $_POST["address"];
-    $email = $_POST["email"];
-    $nickname = $_POST["nickname"];
-    $pwd = $_POST["pwd"];
-    $pwdRepeat = $_POST["pwdrepeat"];
-    
+    $name = addslashes($_POST["name"]);
+    $nif = addslashes($_POST["nif"]);
+    $address = addslashes($_POST["address"]);
+    $email = addslashes($_POST["email"]);
+    $nickname = addslashes($_POST["nickname"]);
+    $pwd = addslashes($_POST["pwd"]);
+    $pwdRepeat = addslashes($_POST["pwdrepeat"]);
+
 
     // Instancia de objetos para validar la entrada
     require_once "../model/SignUpValidator.class.php";
