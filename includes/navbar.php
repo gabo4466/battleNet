@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <script>
     function openNav() {
         document.getElementById("navBar").style.width = "250px";
