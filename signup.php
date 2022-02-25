@@ -18,13 +18,13 @@ include "includes/head.php";
             <form action="controller/signup.controller.php" method="post">
                 <h2>Regístrate</h2>
                 <div id="formSignUp">
-                    <input type="text" name="name" placeholder="Nombre...">
-                    <input type="text" name="email" placeholder="Correo...">
-                    <input type="text" name="nif" placeholder="Dni...">
-                    <input type="text" name="address" placeholder="Domicilio...">
-                    <input type="text" name="nickname" placeholder="Nickname...">
-                    <input type="password" name="pwd" placeholder="Contrase&#241;a...">
-                    <input type="password" name="pwdrepeat" placeholder="Repite la contrase&#241;a...">
+                    <input type="text" required name="name" placeholder="Nombre...">
+                    <input type="text" required name="email" placeholder="Correo...">
+                    <input type="text" required name="nif" placeholder="Dni...">
+                    <input type="text" required name="address" placeholder="Domicilio...">
+                    <input type="text" required name="nickname" placeholder="Nickname...">
+                    <input type="password" required name="pwd" placeholder="Contrase&#241;a...">
+                    <input type="password" required name="pwdrepeat" placeholder="Repite la contrase&#241;a...">
                     <button type="submit" name="submit" value="1">Registrar</button>
                 </div>
             </form>
