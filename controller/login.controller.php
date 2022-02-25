@@ -4,8 +4,8 @@
 if (isset($_POST["submit"])){
 
     // Recoger Data
-    $email = $_POST["email"];
-    $pwd = $_POST["pwd"];
+    $email = addslashes($_POST["email"]);
+    $pwd = addslashes($_POST["pwd"]);
 
     // Instancia de objetos para validar la entrada
     require_once "../model/LoginValidator.class.php";
