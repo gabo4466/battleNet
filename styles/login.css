@@ -18,14 +18,14 @@ section {
 
 }
 body {
-    background-image: url("../img/darkPortal.png");
+    background-image: url("../assets/img/darkPortal.png");
     background-position: center;
 }
 
 @media screen and (min-device-width: 425px){
 
     body {
-        background-image: url("../img/darkPortal2.png");
+        background-image: url("../assets/img/darkPortal2.png");
 
     }
 
@@ -96,7 +96,7 @@ tamaño Tablet (de 600 px a 1365px)
     }
 
     body {
-        background-image: url("../img/heroesBlizzard.jpg");
+        background-image: url("../assets/img/heroesBlizzard.jpg");
 
     }
 
