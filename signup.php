@@ -24,7 +24,7 @@ include "includes/head.php";
                     <input type="text" required name="address" placeholder="Domicilio...">
                     <input type="text" required name="nickname" placeholder="Nickname...">
                     <input type="password" required name="pwd" placeholder="Contrase&#241;a...">
-                    <input type="password" required name="pwdrepeat" placeholder="Repite la contrase&#241;a...">
+                    <input type="password" required name="pwdRepeat" placeholder="Repite la contrase&#241;a...">
                     <button type="submit" name="submit" value="1">Registrar</button>
                 </div>
             </form>

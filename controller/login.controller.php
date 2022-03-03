@@ -4,8 +4,9 @@
 if (isset($_POST["submit"])){
 
     // Recoger Data
-    $email = addslashes($_POST["email"]);
-    $pwd = addslashes($_POST["pwd"]);
+    foreach ($_POST as $key => $value){
+        $$key = addslashes($value);
+    }
 
     // Instancia de objetos para validar la entrada
     require_once "../model/LoginValidator.class.php";
