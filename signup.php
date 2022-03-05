@@ -10,8 +10,8 @@ include "includes/head.php";
 
 
     <?php
-    include "includes/header.php";
-    include "includes/navbar.php";
+        include "includes/header.php";
+        include "includes/navbar.php";
     ?>
     <section>
         <div id="signUp">
