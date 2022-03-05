@@ -24,10 +24,14 @@ include "includes/navbar.php";
             </div>
         </form>
     </div>
+
+
+
 </section>
 <?php
 include "includes/footer.php";
 ?>
 
+<script src="assets/js/login.js"></script>
 </body>
 </html>
