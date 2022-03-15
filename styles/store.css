@@ -11,12 +11,13 @@ section {
 
     display: grid;
     grid-template-columns: 5% 90% 5%;
-    grid-template-rows: 30px 6% 30px 1fr;
+    grid-template-rows: 30px 6% 30px 6% 1fr;
     grid-template-areas:
     ". . ."
     "search search search"
     "filter filter filter"
-    ". . .";
+    ". . ."
+    "card card card";
 
 }
 
@@ -59,6 +60,10 @@ section {
     cursor: pointer;
 }
 
+#card {
+    grid-area: card;
+}
+
 
 input {
     padding: 5px;
@@ -88,7 +93,7 @@ tamaño Tablet (de 600 px a 1365px)
 
     section {
 
-        grid-template-rows: 10px 6% 30px 1fr;
+        grid-template-rows: 10px 6% 30px 6% 1fr;
 
     }
 

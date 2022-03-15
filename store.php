@@ -26,6 +26,14 @@ include "includes/navbar.php";
         <a id="peluche" onclick="">Peluche</a>
         <a id="ropa" onclick="">Ropa</a>
     </div>
+    <div id="card">
+        <div id="image">
+            <p>FOTO</p>
+        </div>
+        <div id="text">
+            <p>TEXTO</p>
+        </div>
+    </div>
 
 
 
