@@ -64,7 +64,6 @@ function validaNIE(strcif) {
  * @return Verdadero en caso de que el mail sea valido, falso en caso contrario.
  */
 function validateEmail(email){
-    console.log("Validando email")
     let valid = false;
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
         valid = true;
@@ -96,7 +95,7 @@ function validateLogin(){
             document.frmLogin.submit();
         }
     }else{
-        alert("Debes llenar todos los campos.")
+        alert("Debes llenar todos los campos.");
     }
 }
 
@@ -106,6 +105,7 @@ function validateLogin(){
 function validaSignUp(){
     let valid = false;
     const nif = document.getElementsByName("nif")[0].value.trim();
+    const email = document.getElementsByName("email")[0].value.trim();
     if (validaNIF(nif)){
         valid = true;
     }else{
@@ -114,6 +114,11 @@ function validaSignUp(){
         }else{
             alert("NIF invalido");
         }
+    }
+    if (validateEmail(email)){
+        valid = true;
+    }else{
+        alert("El email ingresado es inválido.");
     }
     if (valid){
         document.frmSignUp.submit();
