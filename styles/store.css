@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/**
+tamaño smartphone (hasta 424px)
+ */
+
+section {
+
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 30px 6% 30px 1fr;
+    grid-template-areas:
+    ". . ."
+    "search search search"
+    "filter filter filter"
+    ". . .";
+
+}
+
+#search {
+
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-area: search;
+    justify-content: center;
+
+
+}
+
+#search form {
+    width: 90%;
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-area: filter;
+    justify-content: center;
+}
+
+#filters a{
+    display: inline-block;
+    width: 80px;
+    background: #0074E0;
+    border: 2px solid #0000;
+    margin: 8px 0 0 12px;
+    border-radius: 5px;
+    padding: 0 6px;
+    text-align: center;
+}
+
+#filters a:hover{
+    cursor: pointer;
+}
+
+
+input {
+    padding: 5px;
+    margin-bottom: 5px;
+    flex-grow: 2;
+    background: rgba(21, 23, 30, 0.84) none;
+    border: #0074E0 2px solid;
+    border-radius: 5px;
+    width: 100%;
+
+}
+
+/**
+tamaño tablet (de 425px a 1364px)
+ */
+@media screen and (min-device-width: 425px){
+
+
+
+}
+
+/**
+tamaño Tablet (de 600 px a 1365px)
+ */
+@media screen and (min-device-width: 600px){
+
+
+    section {
+
+        grid-template-rows: 10px 6% 30px 1fr;
+
+    }
+
+}
+
+
+/**
+tamaño Escritorio
+ */
+@media screen and (min-device-width: 1366px) {
+
+
+
+}
