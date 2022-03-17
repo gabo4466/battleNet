@@ -32,6 +32,6 @@ include "includes/navbar.php";
 include "includes/footer.php";
 ?>
 
-<script src="assets/js/login.js"></script>
+<script src="assets/js/userValidator.js"></script>
 </body>
 </html>
