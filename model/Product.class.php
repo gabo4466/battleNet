@@ -16,7 +16,7 @@ class Product {
      * @param $stock
      * @param $img
      */
-    public function __construct($name, $prize, $stock, $img, $desc, $type, $id = "") {
+    public function __construct($name, $prize, $stock, $desc, $img, $type, $id = "") {
         $this->id = $id;
         $this->name = $name;
         $this->desc = $desc;

@@ -20,7 +20,7 @@ include "includes/navbar.php";
             <div id="formLogin">
                 <input type="text" required name="email" placeholder="Correo...">
                 <input type="password" required name="pwd" placeholder="Contrase&#241;a...">
-                <button onclick="validateLogin()" name="submit">Iniciar sesión</button>
+                <button onclick="validateLogin()" name="sent">Iniciar sesión</button>
             </div>
         </form>
     </div>
