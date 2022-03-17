@@ -1,0 +1,146 @@
+
+/**
+tamaño smartphone (hasta 424px)
+ */
+
+section {
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 30px 30px 30px 50px 1fr;
+    grid-template-areas:
+    ". . ."
+    "search search search"
+    "filter filter filter"
+    ". . ."
+    "cards cards cards";
+
+}
+
+#search {
+
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-area: search;
+    justify-content: center;
+
+
+}
+
+#search form {
+    width: 90%;
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-area: filter;
+    justify-content: center;
+}
+
+#filters a{
+    display: inline-block;
+    width: 80px;
+    background: #0074E0;
+    border: 2px solid #0000;
+    margin: 8px 0 0 12px;
+    border-radius: 5px;
+    padding: 0 6px;
+    text-align: center;
+}
+
+#filters a:hover{
+    cursor: pointer;
+}
+
+#cards {
+    grid-area: cards;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+
+input {
+    padding: 5px;
+    margin-bottom: 5px;
+    flex-grow: 2;
+    background: rgba(21, 23, 30, 0.84) none;
+    border: #0074E0 2px solid;
+    border-radius: 5px;
+    width: 100%;
+
+}
+
+.card {
+    padding: 0;
+    display: flex;
+    flex-flow: wrap column;
+    background-color: #b6b6be;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.card:hover{
+
+}
+
+.card p{
+    color: #111111;
+    width: 290px;
+    padding: 5px;
+    font-family:"Bookman Old Style";
+}
+
+.title{
+    font-weight: bolder;
+    font-size: large;
+}
+
+.card .image img{
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+.prize{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.prize p{
+    width: fit-content;
+}
+
+.card a{
+    width: 20px;
+    padding: 4px;
+    display: block;
+    background-color: #0074E0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 5px;
+}
+ .card a img{
+     width: 100%;
+ }
+
+
+/**
+tamaño Tablet (de 425 px a 1365px)
+ */
+@media screen and (min-device-width: 425px){
+
+
+}
+
+
+/**
+tamaño Escritorio
+ */
+@media screen and (min-device-width: 1366px) {
+
+
+
+}
