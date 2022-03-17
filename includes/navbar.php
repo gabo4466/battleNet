@@ -25,6 +25,7 @@
             <!-- PARTE PUBLICA DE LA WEB -->
             <a class="navOption" href="login.php">Iniciar Sesión</a>
             <a class='navOption' href='signup.php'>Registro</a>
+            <a class='navOption' href='store.php'>Tienda</a>
         <?php
             }
         ?>
