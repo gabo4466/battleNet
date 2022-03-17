@@ -1,23 +1,17 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 
 /**
 tamaño smartphone (hasta 424px)
  */
 
 section {
-
-    display: grid;
     grid-template-columns: 5% 90% 5%;
-    grid-template-rows: 30px 6% 30px 6% 1fr;
+    grid-template-rows: 30px 30px 30px 50px 1fr;
     grid-template-areas:
     ". . ."
     "search search search"
     "filter filter filter"
     ". . ."
-    "card card card";
+    "cards cards cards";
 
 }
 
@@ -60,8 +54,12 @@ section {
     cursor: pointer;
 }
 
-#card {
-    grid-area: card;
+#cards {
+    grid-area: cards;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    overflow: hidden;
 }
 
 
@@ -76,26 +74,64 @@ input {
 
 }
 
-/**
-tamaño tablet (de 425px a 1364px)
- */
-@media screen and (min-device-width: 425px){
-
-
+.card {
+    padding: 0;
+    display: flex;
+    flex-flow: wrap column;
+    background-color: #b6b6be;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.card:hover{
 
 }
 
+.card p{
+    color: #111111;
+    width: 290px;
+    padding: 5px;
+    font-family:"Bookman Old Style";
+}
+
+.title{
+    font-weight: bolder;
+    font-size: large;
+}
+
+.card .image img{
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+.prize{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.prize p{
+    width: fit-content;
+}
+
+.card a{
+    width: 20px;
+    padding: 4px;
+    display: block;
+    background-color: #0074E0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 5px;
+}
+ .card a img{
+     width: 100%;
+ }
+
+
 /**
-tamaño Tablet (de 600 px a 1365px)
+tamaño Tablet (de 425 px a 1365px)
  */
-@media screen and (min-device-width: 600px){
+@media screen and (min-device-width: 425px){
 
-
-    section {
-
-        grid-template-rows: 10px 6% 30px 6% 1fr;
-
-    }
 
 }
 

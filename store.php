@@ -26,13 +26,79 @@ include "includes/navbar.php";
         <a id="peluche" onclick="">Peluche</a>
         <a id="ropa" onclick="">Ropa</a>
     </div>
-    <div id="card">
-        <div id="image">
-            <p>FOTO</p>
+    <div id="cards">
+        <div class="card">
+            <div class="image">
+                <img src="waifu.png">
+            </div>
+            <div class="title">
+                <p>Waifu</p>
+            </div>
+            <div class="description">
+                <p>Erase una vez que se era, que Gabriel queria jugar al fire emblem</p>
+            </div>
+            <div class="prize">
+                <p>13.09 €</p>
+                <a><img class="shop" src="assets/img/carrito-de-compras.png" alt="comprar"></a>
+            </div>
         </div>
-        <div id="text">
-            <p>TEXTO</p>
+
+       <div class="card">
+            <div class="image">
+                <img src="waifu.png">
+            </div>
+            <div class="title">
+                <p>Waifu</p>
+            </div>
+            <div class="description">
+                <p>Erase una vez que se era, que Gabriel queria jugar al fire emblem</p>
+            </div>
+            <div class="prize">
+                <p>13.09 €</p>
+                <a><img class="shop" src="assets/img/carrito-de-compras.png" alt="comprar"></a>
+            </div>
         </div>
+
+       <div class="card">
+            <div class="image">
+                <img src="waifu.png">
+            </div>
+            <div class="title">
+                <p>Waifu</p>
+            </div>
+            <div class="description">
+                <p>Erase una vez que se era, que Gabriel queria jugar al fire emblem</p>
+            </div>
+            <div class="prize">
+                <p>13.09 €</p>
+                <a><img class="shop" src="assets/img/carrito-de-compras.png" alt="comprar"></a>
+            </div>
+        </div>
+
+       <div class="card">
+            <div class="image">
+                <img src="waifu.png">
+            </div>
+            <div class="title">
+                <p>Waifu</p>
+            </div>
+            <div class="description">
+                <p>Erase una vez que se era, que Gabriel queria jugar al fire emblem</p>
+            </div>
+            <div class="prize">
+                <p>13.09 €</p>
+                <a><img class="shop" src="assets/img/carrito-de-compras.png" alt="comprar"></a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
     </div>
 
 
