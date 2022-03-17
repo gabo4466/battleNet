@@ -11,6 +11,7 @@
 <?php
 include "includes/header.php";
 include "includes/navbar.php";
+require_once ("model/Store.class.php");
 ?>
 <section>
 
@@ -27,82 +28,18 @@ include "includes/navbar.php";
         <a id="ropa" onclick="">Ropa</a>
     </div>
     <div id="cards">
-        <div class="card">
-            <div class="image">
-                <img src="waifu.png">
-            </div>
-            <div class="title">
-                <p>Waifu</p>
-            </div>
-            <div class="description">
-                <p>Erase una vez que se era, que Gabriel queria jugar al fire emblem</p>
-            </div>
-            <div class="prize">
-                <p>13.09 €</p>
-                <a><img class="shop" src="assets/img/carrito-de-compras.png" alt="comprar"></a>
-            </div>
+
+        <?php
+            $store = new Store();
+            echo $store->createCards();
+        ?>
+        <div id="notFound">
+            No se han encontrado resultados.
         </div>
-
-       <div class="card">
-            <div class="image">
-                <img src="waifu.png">
-            </div>
-            <div class="title">
-                <p>Waifu</p>
-            </div>
-            <div class="description">
-                <p>Erase una vez que se era, que Gabriel queria jugar al fire emblem</p>
-            </div>
-            <div class="prize">
-                <p>13.09 €</p>
-                <a><img class="shop" src="assets/img/carrito-de-compras.png" alt="comprar"></a>
-            </div>
-        </div>
-
-       <div class="card">
-            <div class="image">
-                <img src="waifu.png">
-            </div>
-            <div class="title">
-                <p>Waifu</p>
-            </div>
-            <div class="description">
-                <p>Erase una vez que se era, que Gabriel queria jugar al fire emblem</p>
-            </div>
-            <div class="prize">
-                <p>13.09 €</p>
-                <a><img class="shop" src="assets/img/carrito-de-compras.png" alt="comprar"></a>
-            </div>
-        </div>
-
-       <div class="card">
-            <div class="image">
-                <img src="waifu.png">
-            </div>
-            <div class="title">
-                <p>Waifu</p>
-            </div>
-            <div class="description">
-                <p>Erase una vez que se era, que Gabriel queria jugar al fire emblem</p>
-            </div>
-            <div class="prize">
-                <p>13.09 €</p>
-                <a><img class="shop" src="assets/img/carrito-de-compras.png" alt="comprar"></a>
-            </div>
-        </div>
-
-
-
-
-
-
-
 
 
     </div>
-
-
-
+    <script src="assets/js/searchEngine.js"></script>
 </section>
 <?php
 include "includes/footer.php";

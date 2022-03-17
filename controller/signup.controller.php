@@ -1,6 +1,6 @@
 <?php
 // Comprobar que el usuario venga por la ruta correcta (submit del formulario de registro)
-if (isset($_POST["submit"])){
+if (isset($_POST["sent"])){
 
     // Recoger Data
     foreach ($_POST as $key => $value){
