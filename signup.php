@@ -15,7 +15,7 @@ include "includes/head.php";
     ?>
     <section>
         <div id="signUp">
-            <form action="controller/signup.controller.php" method="post">
+            <form name="frmSignUp" action="controller/signup.controller.php" method="post">
                 <h2>Regístrate</h2>
                 <div id="formSignUp">
                     <input type="text" required name="name" placeholder="Nombre...">
@@ -25,7 +25,7 @@ include "includes/head.php";
                     <input type="text" required name="nickname" placeholder="Nickname...">
                     <input type="password" required name="pwd" placeholder="Contrase&#241;a...">
                     <input type="password" required name="pwdRepeat" placeholder="Repite la contrase&#241;a...">
-                    <button type="submit" name="submit" value="1">Registrar</button>
+                    <button onclick="validaSignUp()" name="submit" value="1">Registrar</button>
                 </div>
             </form>
         </div>
@@ -33,6 +33,6 @@ include "includes/head.php";
     <?php
     include "includes/footer.php";
     ?>
-
+    <script src="assets/js/userValidator.js"></script>
 </body>
 </html>

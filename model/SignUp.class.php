@@ -30,10 +30,10 @@ class SignUp extends DBConnection {
      * @param $user
      */
     protected function insertUser($user, $pwd){
-        $stmt = $this->connect()->prepare('INSERT INTO users (users_name, users_nif, users_address, users_email, users_nickname, users_password) VALUES (?, ?, ?, ?, ?, ?);');
+        $stmt = $this->connect()->prepare('INSERT INTO users (users_name, users_nif, users_address, users_email, users_nickname, users_password, users_news) VALUES (?, ?, ?, ?, ?, ?, ?);');
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-        if (!$stmt->execute(array($user->getName(), $user->getNif(), $user->getAddress(), $user->getEmail(), $user->getNickname(), $hashedPwd))){
+        if (!$stmt->execute(array($user->getName(), $user->getNif(), $user->getAddress(), $user->getEmail(), $user->getNickname(), $hashedPwd, 0))){
             $stmt = null;
             header("location: ../signup.php?error=stmtfailed");
             exit();
