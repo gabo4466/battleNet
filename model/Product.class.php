@@ -7,6 +7,7 @@ class Product {
     private $prize;
     private $stock;
     private $img;
+    private $type;
 
     /**
      * @param $id
@@ -22,6 +23,7 @@ class Product {
         $this->desc = $desc;
         $this->prize = $prize;
         $this->stock = $stock;
+        $this->type = $type;
         $this->img = $img;
     }
 
@@ -108,5 +110,20 @@ class Product {
     public function setImg($img) {
         $this->img = $img;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getType() {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type) {
+        $this->type = $type;
+    }
+
 
 }

@@ -21,11 +21,11 @@ require_once ("model/Store.class.php");
         </form>
     </div>
     <div id="filters">
-        <a id="juego" onclick="">Juego</a>
-        <a id="estatuilla" onclick="">Estatuilla</a>
-        <a id="poster" onclick="">Poster</a>
-        <a id="peluche" onclick="">Peluche</a>
-        <a id="ropa" onclick="">Ropa</a>
+        <a id="juego" onclick="filterByType('Juego')">Juego</a>
+        <a id="estatuilla" onclick="filterByType('Estatuilla')">Estatuilla</a>
+        <a id="poster" onclick="filterByType('Poster')">Poster</a>
+        <a id="peluche" onclick="filterByType('Peluche')">Peluche</a>
+        <a id="ropa" onclick="filterByType('Ropa')">Ropa</a>
     </div>
     <div id="cards">
 
