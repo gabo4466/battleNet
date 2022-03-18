@@ -103,25 +103,22 @@ function validateLogin(){
  * Funcion que valida los campos del Registro y realiza el submit del formulario, en caso de error muestra alertas indicando este.
  */
 function validaSignUp(){
-    let valid = false;
+    let valid = true;
     const nif = document.getElementsByName("nif")[0].value.trim();
     const email = document.getElementsByName("email")[0].value.trim();
-    if (validaNIF(nif)){
-        valid = true;
-    }else{
-        if (validaNIE(nif)){
-            valid = true;
-        }else{
+    if (!validaNIF(nif)){
+        if (!validaNIE(nif)){
             alert("NIF invalido");
+            valid = false;
         }
     }
-    if (validateEmail(email)){
-        valid = true;
-    }else{
-        alert("El email ingresado es inválido.");
-    }
     if (valid){
-        document.frmSignUp.submit();
+        valid = validateEmail(document.getElementsByName("email")[0].value);
+        if (valid){
+            document.frmSignUp.submit();
+        }
+    }else{
+        alert("Debes llenar todos los campos.");
     }
 
 }
