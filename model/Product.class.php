@@ -27,6 +27,26 @@ class Product {
         $this->img = $img;
     }
 
+    public function createCard($url){
+
+        $result = "";
+
+        $result .= "<div class='card'>";
+        // Imagen
+        $result .= "<div class='image'><img src='". $url->imagesDirectory . $this->getImg()."'></div>";
+        $result .= "<div class='title'><p class='titleStr'>".$this->getName()."</p></div>";
+        $result .= "<div class='description'><p>".$this->getDesc()."</p></div>";
+        $result .= "<div class='prize'><p>".$this->getPrize()." €</p>";
+        if ($this->getStock() == 1){
+            $result .= "<a><img class='shop clickAble' src='assets/img/carrito-de-compras.png' alt='comprar'></a></div>";
+        }else{
+            $result .= "<a><img class='shop notClickAble' src='assets/img/out-of-stock.png' alt='comprar'></a></div>";
+        }
+        $result .= "</div>";
+        return $result;
+    }
+
+
     /**
      * @return mixed|string
      */

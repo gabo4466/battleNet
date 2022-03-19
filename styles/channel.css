@@ -1,0 +1,53 @@
+/**
+tamaño smartphone (hasta 424px)
+ */
+
+section {
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 30px 400px;
+    grid-template-areas:
+    ". . ."
+    "channel channel channel";
+
+}
+
+#channels {
+    display: flex;
+    flex-flow: wrap column;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-area: channel;
+    justify-content: center;
+}
+
+#channels a{
+    display: flex;
+    padding: 10px;
+    grid-area: channel;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    margin: 10px 5px 0px 5px;
+}
+
+#channels a:hover{
+    cursor: pointer;
+}
+
+
+/**
+tamaño Tablet (de 425 px a 1365px)
+ */
+@media screen and (min-device-width: 425px){
+
+
+}
+
+
+/**
+tamaño Escritorio
+ */
+@media screen and (min-device-width: 1366px) {
+
+
+
+}
