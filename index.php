@@ -12,7 +12,7 @@
     include "includes/navbar.php";
 ?>
 <section>
-    <!-- prueba -->
+
 </section>
 <?php
     include "includes/footer.php";
