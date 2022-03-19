@@ -1,7 +1,7 @@
 <?php
 require_once("DBConnection.class.php");
-require_once ("ChannelObj.class.php");
-class Channel extends DBConnection{
+require_once("ForumObj.class.php");
+class Channels extends DBConnection{
 
    private $channelsList;
 
@@ -37,6 +37,10 @@ class Channel extends DBConnection{
 
       $result = "";
       foreach ($this->channelsList as $value){
+
+          $result .= "<a href=''";
+
+
 
       }
 

@@ -18,13 +18,11 @@ include "includes/navbar.php";
         <p>NORMAS</p>
     </div>
     <div id="forum">
-        <a id="diablo" href="channel.php?forum=diablo">Diablo III</a>
-        <a id="warcraft" href="channel.php?forum=warcraft">Warcraft III</a>
-        <a id="wow" href="channel.php?forum=wow">World of Warcraft</a>
-        <a id="starcraft" href="channel.php?forum=starcraft">Starcraft II</a>
-        <a id="overwatch" href="channel.php?forum=overwatch">Overwatch</a>
-        <a id="heroes" href="channel.php?forum=heroes">Heroes of Storm</a>
-        <a id="heartstone" href="channel.php?forum=heartstone">Heartstone</a>
+        <?php
+        require_once ("model/Forums.class.php");
+        $forums = new Forums();
+        echo $forums->createForums();
+        ?>
     </div>
 
 </section>

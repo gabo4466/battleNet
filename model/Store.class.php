@@ -45,18 +45,8 @@ class Store extends DBConnection {
     public function createCards(){
         $result = "";
         foreach ($this->productsList as $value){
-            $result .= "<div class='card'>";
-            // Imagen
-            $result .= "<div class='image'><img src='". $this->imagesDirectory . $value->getImg()."'></div>";
-            $result .= "<div class='title'><p class='titleStr'>".$value->getName()."</p></div>";
-            $result .= "<div class='description'><p>".$value->getDesc()."</p></div>";
-            $result .= "<div class='prize'><p>".$value->getPrize()." €</p>";
-            if ($value->getStock() == 1){
-                $result .= "<a><img class='shop clickAble' src='assets/img/carrito-de-compras.png' alt='comprar'></a></div>";
-            }else{
-                $result .= "<a><img class='shop notClickAble' src='assets/img/out-of-stock.png' alt='comprar'></a></div>";
-            }
-            $result .= "</div>";
+            $result .= $value->createCard($this->imagesDirectory);
+
         }
         return $result;
     }

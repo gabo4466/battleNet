@@ -1,9 +1,9 @@
 <?php
 
-class ChannelObj{
-  private $id;
-  private $name;
-  private $desc;
+abstract class ForumObj{
+  protected $id;
+  protected $name;
+  protected $desc;
 
     /**
      * @param $id
@@ -15,6 +15,12 @@ class ChannelObj{
         $this->desc = $desc;
         $this->id = $id;
     }
+
+    /**
+     * método implementado en los hijos que va a devolver el HTML para pintarlo en la web
+     * @return devuelve código HTML
+     */
+    public abstract function createOption();
 
     /**
      * @return mixed|string

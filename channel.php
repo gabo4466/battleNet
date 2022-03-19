@@ -16,12 +16,12 @@ include "includes/navbar.php";
 
     <div id="channels">
         <!--
-        <a id="general" href="channel.php?forum=diablo">General</a>
-        <a id="tutoriales" href="channel.php?forum=warcraft">Tutoriales</a>
-        <a id="historia" href="channel.php?forum=wow">Historia</a>
-        <a id="parches" href="channel.php?forum=starcraft">Parches</a>
-        <a id="lfg" href="channel.php?forum=overwatch">Looking for Group</a>
-        <a id="raids" href="channel.php?forum=heroes">Raids</a>-->
+        <a id="general" href="channel.php?forum=1&channel=1">General</a>
+        <a id="tutoriales" href="channel.php?forum=1&channel=2">Tutoriales</a>
+        <a id="historia" href="channel.php?forum=1&channel=3">Historia</a>
+        <a id="parches" href="channel.php?forum=1&channel=4">Parches</a>
+        <a id="lfg" href="channel.php?forum=1&channel=5">Looking for Group</a>
+        <a id="raids" href="channel.php?forum=1&channel=6">Raids</a>-->
     </div>
 
 </section>
