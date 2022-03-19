@@ -1,0 +1,69 @@
+/**
+tamaño smartphone (hasta 424px)
+ */
+
+section {
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 30px 40px 400px;
+    grid-template-areas:
+    ". . ."
+    "rules rules rules"
+    "forum forum forum";
+
+}
+
+#rules {
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-area: rules;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    margin: 0px 5px 0px 5px;
+}
+
+#rules p{
+    text-align: center;
+    padding: 10px;
+}
+
+#forum {
+    display: flex;
+    flex-flow: wrap column;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-area: forum;
+    justify-content: center;
+}
+
+#forum a{
+    display: flex;
+    padding: 10px;
+    grid-area: rules;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    margin: 10px 5px 0px 5px;
+}
+
+#forum a:hover{
+    cursor: pointer;
+}
+
+
+/**
+tamaño Tablet (de 425 px a 1365px)
+ */
+@media screen and (min-device-width: 425px){
+
+
+}
+
+
+/**
+tamaño Escritorio
+ */
+@media screen and (min-device-width: 1366px) {
+
+
+
+}

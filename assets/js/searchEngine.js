@@ -1,5 +1,14 @@
+let filter = 0;
 const searchBar = document.forms['formSearch'].querySelector('input');
 searchBar.addEventListener('keyup', function(e) {
+    search(e);
+});
+
+
+/**
+ * Funcion que segun el termino de busqueda, muestra u oculta los productos
+ */
+function search(e){
     const term = e.target.value.toLocaleLowerCase();
     const products = document.getElementsByClassName('titleStr');
     let notFound = document.getElementById('notFound');
@@ -14,4 +23,12 @@ searchBar.addEventListener('keyup', function(e) {
         }
     });
     notFound.style.display = results ? 'none' : 'block';
-});
+}
+
+/**
+ * Funcion que filtra los productos segun el tipo de producto
+ * @param value
+ */
+function filterByType(value){
+    filter = value;
+}

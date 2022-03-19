@@ -85,9 +85,8 @@ input {
 
 .card p{
     color: #111111;
-    width: 290px;
+    max-width: 290px;
     padding: 5px;
-
     cursor: default;
 }
 
@@ -97,7 +96,6 @@ input {
 }
 
 .card .image img{
-    height: 375px;
     width: 300px;
     border-radius: 10px;
 
@@ -136,6 +134,14 @@ input {
 
  #notFound{
      display: none;
+ }
+
+ .type{
+     font-size: small;
+     display: inline-block;
+     background: #0074E0;
+     padding: 2px;
+     border-radius: 5px;
  }
 
 /**

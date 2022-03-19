@@ -16,14 +16,15 @@ class Store extends DBConnection {
 
 
     /**
+     * Metodo que retorna todos los productos de la base de datos.
      * @author Gabriel y Fran
      * @version 3.2022
      * @return array Lista de productos en la base de datos.
      */
-    private function getProducts(){
+    public function getProducts(){
         $stmt = $this->connect()->query('SELECT id_products, products_name, products_prize, products_stock, products_desc, products_img, products_type FROM products');
         // Comprueba si la query se ha realizado con exito, en caso contrario retorna un array vacio.
-        if (!$stmt){
+        if ($stmt == false){
             $stmt = null;
             return [];
         }
@@ -45,18 +46,7 @@ class Store extends DBConnection {
     public function createCards(){
         $result = "";
         foreach ($this->productsList as $value){
-            $result .= "<div class='card'>";
-            // Imagen
-            $result .= "<div class='image'><img src='". $this->imagesDirectory . $value->getImg()."'></div>";
-            $result .= "<div class='title'><p class='titleStr'>".$value->getName()."</p></div>";
-            $result .= "<div class='description'><p>".$value->getDesc()."</p></div>";
-            $result .= "<div class='prize'><p>".$value->getPrize()." €</p>";
-            if ($value->getStock() == 1){
-                $result .= "<a><img class='shop clickAble' src='assets/img/carrito-de-compras.png' alt='comprar'></a></div>";
-            }else{
-                $result .= "<a><img class='shop notClickAble' src='assets/img/out-of-stock.png' alt='comprar'></a></div>";
-            }
-            $result .= "</div>";
+            $result .= $value->createCard($this->imagesDirectory);
         }
         return $result;
     }
