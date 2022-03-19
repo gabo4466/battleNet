@@ -12,7 +12,7 @@
     include "includes/navbar.php";
 ?>
 <section>
-    
+
 </section>
 <?php
     include "includes/footer.php";

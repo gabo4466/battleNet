@@ -13,7 +13,7 @@ class Channels extends DBConnection{
 
    private function getChannels(){
 
-       $stmt = $this->connect()->query('SELECT id_channels, channels_name, channels_desc FROM channels' );
+       $stmt = $this->connect()->query('SELECT id_channels, channels_name, channels_description FROM channels' );
 
        if ($stmt == false){
            $stmt = null;
@@ -25,7 +25,6 @@ class Channels extends DBConnection{
        $result = [];
 
        for ($i=0; $i < $channelsLength; $i++){
-
            $channel = new ChannelObj($channels[$i]['channels_name'],$channels[$i]['channels_desc'],$channels[$i]['id_channels']);
            array_push($result,$channel);
        }
@@ -37,17 +36,8 @@ class Channels extends DBConnection{
 
       $result = "";
       foreach ($this->channelsList as $value){
-
           $result .= "<a href=''";
-
-
-
       }
-
-
-
-
-
 
    }
 

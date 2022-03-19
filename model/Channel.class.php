@@ -8,4 +8,7 @@ class Channel extends ForumObj{
         parent::__construct($name, $desc, $id);
     }
 
+    public function createOption() {
+        // TODO: Implement createOption() method.
+    }
 }
