@@ -8,4 +8,14 @@ class Channel extends ForumObj{
         parent::__construct($name, $desc, $id);
     }
 
+
+    public function createOption() {
+
+        $result = "";
+
+        $result .= "<a href='channel.php?forum=".$this->getId()."&channel=".$this->getId()."'>".$this->getName()."</a>";
+
+        return $result;
+    }
+
 }
