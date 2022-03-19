@@ -27,6 +27,11 @@ class Product {
         $this->img = $img;
     }
 
+    /**
+     * Método que crea la tarjeta de un producto en la tienda.
+     * @param $url direccion del directorio donde se guardan las imagenes.
+     * @return string Codigo html de la tarjeta para mostrar en la pagina.
+     */
     public function createCard($url){
 
         $result = "";
