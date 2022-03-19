@@ -33,16 +33,34 @@ class Product {
 
         $result .= "<div class='card'>";
         // Imagen
-        $result .= "<div class='image'><img src='". $url->imagesDirectory . $this->getImg()."'></div>";
-        $result .= "<div class='title'><p class='titleStr'>".$this->getName()."</p></div>";
+        $result .= "<div class='image'><img src='". $url . $this->getImg()."'></div>";
+        // Titulo
+        $result .= "<div class='title'><p class='titleStr'>".$this->getName()."</p>";
+        // Tipo
+        if ($this->getType() == 1){
+            $result .= "<span class='type'>Juego</span></div>";
+        }else if($this->getType() == 2){
+            $result .= "<span class='type'>Estatuilla</span></div>";
+        }else if($this->getType() == 3){
+            $result .= "<span class='type'>Póster</span></div>";
+        }else if($this->getType() == 4){
+            $result .= "<span class='type'>Peluche</span></div>";
+        }else if($this->getType() == 5){
+            $result .= "<span class='type'>Ropa</span></div>";
+        }
+        // Descripcion
         $result .= "<div class='description'><p>".$this->getDesc()."</p></div>";
+        // Precio
         $result .= "<div class='prize'><p>".$this->getPrize()." €</p>";
+        // Boton de compra o indicador de agotado
         if ($this->getStock() == 1){
             $result .= "<a><img class='shop clickAble' src='assets/img/carrito-de-compras.png' alt='comprar'></a></div>";
         }else{
             $result .= "<a><img class='shop notClickAble' src='assets/img/out-of-stock.png' alt='comprar'></a></div>";
         }
         $result .= "</div>";
+
+        
         return $result;
     }
 
