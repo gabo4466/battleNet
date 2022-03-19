@@ -1,6 +1,6 @@
 <?php
 require_once("DBConnection.class.php");
-require_once("ForumObj.class.php");
+require_once("Channel.class.php");
 class Channels extends DBConnection{
 
    private $channelsList;
@@ -25,7 +25,7 @@ class Channels extends DBConnection{
        $result = [];
 
        for ($i=0; $i < $channelsLength; $i++){
-           $channel = new ChannelObj($channels[$i]['channels_name'],$channels[$i]['channels_desc'],$channels[$i]['id_channels']);
+           $channel = new Channel($channels[$i]['channels_name'],$channels[$i]['channels_description'],$channels[$i]['id_channels']);
            array_push($result,$channel);
        }
 
@@ -36,9 +36,10 @@ class Channels extends DBConnection{
 
       $result = "";
       foreach ($this->channelsList as $value){
-          $result .= "<a href=''";
+          $result .= $value->createOption();
       }
 
+      return $result;
    }
 
 
