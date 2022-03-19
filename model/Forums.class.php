@@ -13,7 +13,7 @@ class Forums extends DBConnection{
 
     private function getForums(){
 
-        $stmt = $this->connect()->query('SELECT id_forums, forums_name, forums_desc FROM forums' );
+        $stmt = $this->connect()->query('SELECT id_forums, forums_name, forums_description FROM forums' );
 
         if ($stmt == false){
             $stmt = null;
@@ -26,7 +26,7 @@ class Forums extends DBConnection{
 
         for ($i=0; $i < $forumsLength; $i++){
 
-            $forum = new Forum($forums[$i]['forums_name'],$forums[$i]['forums_desc'],$forums[$i]['id_forums']);
+            $forum = new Forum($forums[$i]['forums_name'],$forums[$i]['forums_description'],$forums[$i]['id_forums']);
             array_push($result,$forum);
         }
 
