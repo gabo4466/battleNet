@@ -16,14 +16,15 @@ class Store extends DBConnection {
 
 
     /**
+     * Metodo que retorna todos los productos de la base de datos.
      * @author Gabriel y Fran
      * @version 3.2022
      * @return array Lista de productos en la base de datos.
      */
-    private function getProducts(){
+    public function getProducts(){
         $stmt = $this->connect()->query('SELECT id_products, products_name, products_prize, products_stock, products_desc, products_img, products_type FROM products');
         // Comprueba si la query se ha realizado con exito, en caso contrario retorna un array vacio.
-        if (!$stmt){
+        if ($stmt == false){
             $stmt = null;
             return [];
         }
@@ -46,7 +47,6 @@ class Store extends DBConnection {
         $result = "";
         foreach ($this->productsList as $value){
             $result .= $value->createCard($this->imagesDirectory);
-
         }
         return $result;
     }
