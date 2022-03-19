@@ -30,12 +30,11 @@ class Product {
     /**
      * Método que crea la tarjeta de un producto en la tienda.
      * @param $url direccion del directorio donde se guardan las imagenes.
-     * @return string Codigo html de la tarjeta para mostrar en la pagina.
+     * @return $result Codigo html de la tarjeta para mostrar en la pagina.
      */
     public function createCard($url){
 
         $result = "";
-
         $result .= "<div class='card'>";
         // Imagen
         $result .= "<div class='image'><img src='". $url . $this->getImg()."'></div>";
@@ -65,7 +64,6 @@ class Product {
         }
         $result .= "</div>";
 
-        
         return $result;
     }
 
