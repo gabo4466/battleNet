@@ -1,4 +1,5 @@
 let filter = 0;
+let car = []
 const filters = document.getElementById("filters").children;
 const searchBar = document.forms['formSearch'].querySelector('input');
 searchBar.addEventListener('keyup', function(e) {
@@ -38,8 +39,6 @@ function filterByType(value){
     }
     changeColorFilter(value);
     search(document.getElementById("searchBar").value);
-
-
 }
 
 /**
@@ -55,5 +54,16 @@ function changeColorFilter(value){
             filters[i].classList.remove("selected");
             filters[i].classList.add("notSelected");
         }
+    }
+}
+
+/**
+ * Funcion que prepara el carro de la compra.
+ * @param id del objeto en la base de datos.
+ */
+function addProduct(id){
+    if (car.indexOf(id) === -1){
+        car.push(id);
+        sessionStorage.setItem("car", JSON.stringify(car));
     }
 }

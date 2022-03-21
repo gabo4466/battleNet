@@ -39,7 +39,7 @@ require_once ("model/Store.class.php");
 
 
     </div>
-    <script src="assets/js/searchEngine.js"></script>
+    <script src="assets/js/store.js"></script>
 </section>
 <?php
 include "includes/footer.php";
