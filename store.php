@@ -21,11 +21,11 @@ require_once ("model/Store.class.php");
         </form>
     </div>
     <div id="filters">
-        <a id="juego" onclick="filterByType('Juego')">Juego</a>
-        <a id="estatuilla" onclick="filterByType('Estatuilla')">Estatuilla</a>
-        <a id="poster" onclick="filterByType('Poster')">Poster</a>
-        <a id="peluche" onclick="filterByType('Peluche')">Peluche</a>
-        <a id="ropa" onclick="filterByType('Ropa')">Ropa</a>
+        <a id="juego" class="notSelected" onclick="filterByType('Juego')">Juego</a>
+        <a id="estatuilla" class="notSelected" onclick="filterByType('Estatuilla')">Estatuilla</a>
+        <a id="poster" class="notSelected" onclick="filterByType('Poster')">Poster</a>
+        <a id="peluche" class="notSelected" onclick="filterByType('Peluche')">Peluche</a>
+        <a id="ropa" class="notSelected" onclick="filterByType('Ropa')">Ropa</a>
     </div>
     <div id="cards">
 
@@ -45,6 +45,5 @@ require_once ("model/Store.class.php");
 include "includes/footer.php";
 ?>
 
-<script src="assets/js/login.js"></script>
 </body>
 </html>

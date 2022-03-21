@@ -31,6 +31,29 @@ function search(term){
  * @param value
  */
 function filterByType(value){
-    filter = value === filter?0:value;
+    if (value === filter){
+        filter = 0;
+    }else{
+        filter = value;
+    }
+    changeColorFilter(value);
     search(document.getElementById("searchBar").value);
+
+
+}
+
+/**
+ * Funcion que cambia las clases de las opciones de los filtros
+ */
+function changeColorFilter(value){
+    for (let i=0;i<filters.length;i++){
+
+        if (filters[i].innerHTML === filter){
+            filters[i].classList.remove("notSelected");
+            filters[i].classList.add("selected");
+        }else{
+            filters[i].classList.remove("selected");
+            filters[i].classList.add("notSelected");
+        }
+    }
 }

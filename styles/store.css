@@ -39,8 +39,6 @@ section {
 #filters a{
     display: inline-block;
     width: 80px;
-    background: #0074E0;
-    border: 2px solid #0000;
     margin: 8px 0 0 12px;
     border-radius: 5px;
     padding: 0 6px;
@@ -136,12 +134,23 @@ input {
      display: none;
  }
 
+ .selected{
+     background-color: #a6a2a2;
+     border: 2px solid #15171E;
+ }
+
+ .notSelected{
+     background: #0074E0;
+     border: 2px solid #0000;
+ }
+
  .type{
      font-size: small;
      display: inline-block;
      background: #0074E0;
      padding: 2px;
      border-radius: 5px;
+     margin-left: 10px;
  }
 
 /**
