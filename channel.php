@@ -22,6 +22,12 @@ include "includes/navbar.php";
         <a id="parches" href="channel.php?forum=1&channel=4">Parches</a>
         <a id="lfg" href="channel.php?forum=1&channel=5">Looking for Group</a>
         <a id="raids" href="channel.php?forum=1&channel=6">Raids</a>-->
+
+        <?php
+        require_once ("model/Channels.class.php");
+        $channels = new Channels();
+        echo $channels->createChannels();
+        ?>
     </div>
 
 </section>
