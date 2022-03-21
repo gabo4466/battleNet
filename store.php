@@ -17,7 +17,7 @@ require_once ("model/Store.class.php");
 
     <div id="search">
         <form name="formSearch" action="controller/login.controller.php" method="post">
-            <input type="search" name="productsearch" placeholder="Busca tu producto...">
+            <input id="searchBar" type="search" name="productsearch" placeholder="Busca tu producto...">
         </form>
     </div>
     <div id="filters">
