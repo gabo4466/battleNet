@@ -10,6 +10,8 @@ class Product {
     private $type;
 
     /**
+     * @author Gabriel y Fran
+     * @version 03.2022
      * @param $id
      * @param $name
      * @param $desc

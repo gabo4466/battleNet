@@ -36,7 +36,6 @@ require_once ("model/Store.class.php");
         <div id="notFound">
             No se han encontrado resultados.
         </div>
-        <a onclick="loadProducts()">CLICK ME</a>
 
 
     </div>

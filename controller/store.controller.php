@@ -1,13 +1,10 @@
 <?php
+require_once ("../model/Store.class.php");
 
 
 header("Content-Type: application/json");
-//$ids = json_decode(stripslashes(file_get_contents("php://input")));
-
-require_once ("../model/Store.class.php");
-
+$ids = json_decode(file_get_contents('php://input'));
 $store = new Store();
-$ids = array(1, 3);
 echo json_encode($store->findProducts($ids));
 
 
