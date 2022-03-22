@@ -79,20 +79,23 @@ function validateEmail(email){
  * @version 3.2022
  */
 function validateLogin(){
+    console.log("JOASKDAK")
     const inputs = document.getElementsByTagName("input");
     let valid = true;
     let index = 0;
     while(valid === true && index < inputs.length){
         if (inputs[index].value === ""){
             valid = false;
-
         }
         index++;
     }
+    console.log("EMPTY IMPUTS:" + valid)
     if (valid){
         valid = validateEmail(document.getElementsByName("email")[0].value);
         if (valid){
             document.frmLogin.submit();
+        }else{
+            alert("El email ingresado no es válido");
         }
     }else{
         alert("Debes llenar todos los campos.");
@@ -116,6 +119,8 @@ function validaSignUp(){
         valid = validateEmail(document.getElementsByName("email")[0].value);
         if (valid){
             document.frmSignUp.submit();
+        }else{
+            alert("El email ingresado no es válido");
         }
     }else{
         alert("Debes llenar todos los campos.");

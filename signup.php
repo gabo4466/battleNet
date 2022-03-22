@@ -26,7 +26,7 @@ include "includes/head.php";
                     <input type="password" required name="pwd" placeholder="Contrase&#241;a...">
                     <input type="password" required name="pwdRepeat" placeholder="Repite la contrase&#241;a...">
                 </div>
-                <button onclick="validaSignUp()" name="sent" value="1">Registrar</button>
+                <button type="button" onclick="validaSignUp()" name="sent" value="1">Registrar</button>
             </form>
         </div>
     </section>

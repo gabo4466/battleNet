@@ -73,9 +73,10 @@ input {
     display: flex;
     flex-flow: wrap column;
     justify-content: space-between;
-    background-color: #b6b6be;
+    background-color: #61617a;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 7.5px;
+    margin-top: 7.5px;
     margin-left: 5px;
     margin-right: 5px;
 
@@ -135,7 +136,8 @@ input {
  }
 
  .selected{
-     background-color: #a6a2a2;
+     background-color: rgba(0, 116, 224, 0.45);
+     color: #d5d5d5;
      border: 2px solid #15171E;
  }
 
@@ -168,7 +170,7 @@ tamaño Escritorio
 @media screen and (min-device-width: 1366px) {
 
     .card:hover{
-        box-shadow: 0 4px 8px 0 rgb(255, 255, 255);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.78);
     }
 
 }
