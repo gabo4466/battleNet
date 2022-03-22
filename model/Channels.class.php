@@ -5,17 +5,17 @@ class Channels extends DBConnection{
 
    private $channelsList;
 
-   public function __construct(){
+   public function __construct($id){
 
-       $this->channelsList = $this->getChannels();
+       $this->channelsList = $this->getChannels($id);
    }
 
 
-   private function getChannels(){
+   private function getChannels($id){
 
-       $stmt = $this->connect()->query('SELECT id_channels, channels_name, channels_description FROM channels' );
+       $stmt = $this->connect()->prepare('SELECT id_channels, channels_name, channels_description FROM channels where fk_forums = ?;' );
 
-       if ($stmt == false){
+       if ($stmt->execute(array($id)) == false){
            $stmt = null;
            return [];
        }
