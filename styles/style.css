@@ -205,6 +205,7 @@ nav a img{
  */
 
 footer{
+    display: block;
     grid-area: foot;
     border-top: 1px solid #FFFFFF3D;
     background: #3b3b3b;
@@ -218,11 +219,8 @@ footer p{
     color: #7C808C;
 }
 
-@media screen and (min-device-width: 1366px){
-
-    footer{
-
-    }
+@media screen and (min-device-width: 600px){
+    
 
 }
 /*

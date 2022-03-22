@@ -15,6 +15,9 @@ require_once ("model/Store.class.php");
 ?>
 <section>
 
+    <div id="cart">
+        <a href="cart.php"><img src="assets/img/carrito-de-compras.png" alt="cart"></a>
+    </div>
     <div id="search">
         <form name="formSearch" action="controller/login.controller.php" method="post">
             <input id="searchBar" type="search" name="productsearch" placeholder="Busca tu producto...">
@@ -40,7 +43,6 @@ require_once ("model/Store.class.php");
 
     </div>
     <script src="assets/js/store.js"></script>
-    <script src="assets/js/cart.js"></script>
 </section>
 <?php
 include "includes/footer.php";

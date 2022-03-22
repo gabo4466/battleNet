@@ -155,11 +155,37 @@ input {
      margin-left: 10px;
  }
 
+#cart{
+    background: rgba(0, 116, 224, 0.37);
+    width: fit-content;
+    position: fixed;
+    right: 25px;
+    border-radius: 10px;
+    top: 25px;
+}
+
+#cart img{
+    width: 50px;
+    height: 50px;
+}
+
+
 /**
 tamaño Tablet (de 425 px a 1365px)
  */
 @media screen and (min-device-width: 425px){
+    #cart{
+        top: 50px;
+    }
 
+    #cart img{
+        width: 80px;
+        height: 80px;
+    }
+
+    #cart:hover{
+        background: rgb(0, 116, 224);
+    }
 
 }
 
@@ -171,6 +197,14 @@ tamaño Escritorio
 
     .card:hover{
         box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.78);
+    }
+
+    #cart img{
+        opacity: 0.5;
+    }
+
+    #cart img:hover{
+        opacity: 1;
     }
 
 }
