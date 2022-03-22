@@ -67,6 +67,10 @@ class Product {
         return $result;
     }
 
+    public function associativeArray(){
+        return array("id"=>$this->id, "name"=>$this->name, "prize"=>$this->prize, "desc"=>$this->desc, "type"=>$this->type, "stock"=>$this->stock, "img"=>$this->img);
+    }
+
 
     /**
      * @return mixed|string

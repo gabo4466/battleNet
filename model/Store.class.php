@@ -57,4 +57,34 @@ class Store extends DBConnection {
         return $this->productsList;
     }
 
+    /**
+     * Método que segun una lista de ids, devuelve una lista de productos.
+     * @author Gabriel y Fran
+     * @version 03.2022
+     * @param $ids lista de ids de productos.
+     */
+    public function findProducts($ids){
+        $result = array();
+        $error = false;
+        $i = 0;
+        while(!$error && $i < count($ids)){
+            $stmt = $this->connect()->prepare("SELECT id_products, products_name, products_prize, products_stock, products_desc, products_img, products_type FROM products WHERE id_products = ?;");
+            if (!$stmt->execute(array($ids[$i]))){
+                $stmt = null;
+                $result = [];
+                $error = true;
+            }else {
+                if ($stmt->rowCount() > 0) {
+
+                    $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    $product = new Product($product[0]['products_name'], $product[0]['products_prize'], $product[0]['products_stock'], $product[0]['products_desc'], $product[0]['products_img'], $product[0]['products_type'], $product[0]['id_products']);
+                    array_push($result, $product->associativeArray());
+                }
+            }
+            $i++;
+        }
+        return $result;
+    }
+
+
 }

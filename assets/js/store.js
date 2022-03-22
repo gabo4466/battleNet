@@ -1,5 +1,5 @@
 let filter = 0;
-let car = []
+let cart = []
 const filters = document.getElementById("filters").children;
 const searchBar = document.forms['formSearch'].querySelector('input');
 searchBar.addEventListener('keyup', function(e) {
@@ -62,8 +62,9 @@ function changeColorFilter(value){
  * @param id del objeto en la base de datos.
  */
 function addProduct(id){
-    if (car.indexOf(id) === -1){
-        car.push(id);
-        sessionStorage.setItem("car", JSON.stringify(car));
+    if (cart.indexOf(id) === -1){
+        cart.push(id);
+        sessionStorage.setItem("cart", JSON.stringify(cart));
     }
 }
+

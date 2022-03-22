@@ -36,10 +36,12 @@ require_once ("model/Store.class.php");
         <div id="notFound">
             No se han encontrado resultados.
         </div>
+        <a onclick="loadProducts()">CLICK ME</a>
 
 
     </div>
     <script src="assets/js/store.js"></script>
+    <script src="assets/js/cart.js"></script>
 </section>
 <?php
 include "includes/footer.php";
