@@ -25,7 +25,6 @@ class Channels extends DBConnection{
        $result = [];
 
        for ($i=0; $i < $channelsLength; $i++){
-
            $channel = new Channel($channels[$i]['channels_name'],$channels[$i]['channels_description'],$channels[$i]['id_channels']);
            array_push($result,$channel);
        }
@@ -37,18 +36,10 @@ class Channels extends DBConnection{
 
       $result = "";
       foreach ($this->channelsList as $value){
-
           $result .= $value->createOption();
-
-
-
       }
 
       return $result;
-
-
-
-
    }
 
 

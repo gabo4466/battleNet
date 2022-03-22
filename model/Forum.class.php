@@ -3,7 +3,7 @@
 require_once ("ForumObj.class.php");
 
 class Forum extends ForumObj{
-
+    private $channels;
     public function __construct($name, $desc, $id="") {
 
         parent::__construct($name, $desc, $id);
