@@ -12,7 +12,8 @@
 <nav>
     <div id="navBar">
         <a id="closeNavBar" href="javascript:void(0)" onclick="closeNav()">&times;</a>
-        <a class="navOption" href="index.php">Inicio</a>
+        <a class="navOption imgOption" href="index.php"><img src="assets/img/battlenet_logo.png" alt="BattleNet Logo"></a>
+        <a class="navOption textOption" href="index.php">Inicio</a>
         <?php
 
             if (isset($_SESSION["userId"])){
