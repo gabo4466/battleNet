@@ -42,6 +42,28 @@ section{
     display: grid;
 }
 
+.table{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.column{
+    text-align: center;
+}
+
+.row{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    border-bottom: #f1f1f1 2px solid;
+    margin-top: 5px;
+}
+
+.tableHeader{
+    font-size: large;
+    font-weight: bold;
+}
+
 /*
 **********************************
     FIN section
