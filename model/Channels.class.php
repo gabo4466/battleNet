@@ -3,19 +3,18 @@ require_once("DBConnection.class.php");
 require_once("Channel.class.php");
 class Channels extends DBConnection{
 
-   private $channelsList;
+    private $channelsList;
 
-   public function __construct($id){
+    public function __construct($id){
+        $this->channelsList = $this->getChannels($id);
+    }
 
-       $this->channelsList = $this->getChannels($id);
-   }
 
-
-   private function getChannels($id){
+    private function getChannels($idForum){
 
        $stmt = $this->connect()->prepare('SELECT id_channels, channels_name, channels_description FROM channels where fk_forums = ?;' );
 
-       if ($stmt->execute(array($id)) == false){
+       if ($stmt->execute(array($idForum)) == false){
            $stmt = null;
            return [];
        }
@@ -25,14 +24,14 @@ class Channels extends DBConnection{
        $result = [];
 
        for ($i=0; $i < $channelsLength; $i++){
-           $channel = new Channel($channels[$i]['channels_name'],$channels[$i]['channels_description'],$channels[$i]['id_channels']);
+           $channel = new Channel($channels[$i]['channels_name'],$channels[$i]['channels_description'],$channels[$i]['id_channels'], $idForum);
            array_push($result,$channel);
        }
 
        return $result;
-   }
+    }
 
-   public function createChannels(){
+    public function createChannels(){
 
       $result = "";
       foreach ($this->channelsList as $value){
@@ -40,30 +39,6 @@ class Channels extends DBConnection{
       }
 
       return $result;
-   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 }
