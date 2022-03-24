@@ -4,7 +4,7 @@
     include "includes/head.php";
     ?>
     <link rel="stylesheet" href="styles/cart.css">
-    <script src="assets/js/cart.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
 </head>
 <body>
 
@@ -15,36 +15,16 @@ include "includes/navbar.php";
 ?>
 <section>
 
-    <div class="table">
-        <div class="row tableHeader">
-            <div class="column">Producto</div>
-            <div class="column">Tipo</div>
-            <div class="column">Precio</div>
-        </div>
-        <div class="row">
-            <div class="column">
-                Columna con excesiva cantidad de texto
-            </div>
-            <div class="column">
-                Columna2
-            </div>
-            <div class="column">
-                Columna numero tres
-            </div>
+    <div id="tableContainer"><h1>Carrito de compra</h1></div>
 
-        </div>
+    <div id="paypal-button-container"></div>
 
-
-    </div>
 
 
 </section>
 <?php
 include "includes/footer.php";
 ?>
-
-
-
-
+<script src="assets/js/cart.js"></script>
 </body>
 </html>
