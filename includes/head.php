@@ -11,4 +11,5 @@ session_start([
 <link rel="shortcut icon" type="img/png" sizes="16x16" href="favicon-16x16.png">
 
 <link rel="stylesheet" href="./styles/style.css">
+<script src="./assets/js/popUp.js"></script>
 
