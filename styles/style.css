@@ -302,6 +302,7 @@ footer p{
 
 #popUp{
     transition: all 0.3s linear;
+    cursor: default;
 }
 
 #popUp .box{
@@ -333,6 +334,7 @@ footer p{
     border: 1px rgb(230, 230, 230) solid;
     padding: 7px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #popUp .textPopUp{

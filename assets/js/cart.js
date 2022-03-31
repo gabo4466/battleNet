@@ -98,12 +98,6 @@ function configPaypal(){
                 console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
                 let transaction = orderData.purchase_units[0].payments.captures[0];
                 popUp(2, "Transacción completada con éxito: <span class='smaller'>"+ transaction.id +"</span>");
-
-                // When ready to go live, remove the alert and show a success message within this page. For example:
-                // var element = document.getElementById('paypal-button-container');
-                // element.innerHTML = '';
-                // element.innerHTML = '<h3>Thank you for your payment!</h3>';
-                // Or go to another URL:  actions.redirect('thank_you.html');
             });
         }
     }).render('#paypal-button-container');
