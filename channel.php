@@ -25,7 +25,9 @@ include "includes/navbar.php";
 
         <?php
         require_once ("model/Channels.class.php");
-        $channels = new Channels();
+        $url = "http://".$_SERVER['HTTP_HOST'].":".$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
+        $id = $_GET['forum'];
+        $channels = new Channels($id);
         echo $channels->createChannels();
         ?>
     </div>
