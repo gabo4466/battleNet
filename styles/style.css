@@ -297,6 +297,7 @@ footer p{
     height:100vh;
     position: fixed;
     display: none;
+    z-index: 1900;
 }
 
 #popUp{
@@ -304,8 +305,8 @@ footer p{
 }
 
 #popUp .box{
+    z-index: 2000;
     position: fixed;
-    z-index: 10;
     background: #0074E0;
     width: 300px;
     top: 20%;
@@ -352,6 +353,17 @@ footer p{
 #popUp img{
     width: 100%;
     height: 100%;
+}
+
+#popUp span{
+    font-size: x-large;
+}
+
+@media screen and (min-device-width: 600px){
+    #popUp .box{
+        width: 400px;
+        margin-left: -200px;
+    }
 }
 
 /*

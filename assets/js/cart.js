@@ -13,7 +13,7 @@ function getItems(data) {
             if (xhr.status === 200) {
                 products = JSON.parse(xhr.responseText);
             }else{
-                alert("Algo ha ido mal.");
+                popUp(3, "Algo ha ido mal.")
             }
         }
     };
@@ -23,6 +23,11 @@ function getItems(data) {
     setTimeout("console.log('Done')", 1000);
 }
 
+/**
+ * Esta funcion carga los productos desde la base de datos en una variable local.
+ * @author Gabriel y Fran
+ * @version 03.2022
+ */
 function loadProducts(){
     let ids = sessionStorage.getItem("cart");
     if (ids !== null){
@@ -73,27 +78,26 @@ function loadTable(){
     document.getElementById("tableContainer").innerHTML += html;
 }
 
+
+/**
+ * Esta funcion realiza las configuraciones necesarias para realizar pagos en paypal
+ */
 function configPaypal(){
     paypal.Buttons({
-
-        // Sets up the transaction when a payment button is clicked
         createOrder: function(data, actions) {
             return actions.order.create({
                 purchase_units: [{
                     amount: {
-                        value: total // Can reference variables or functions. Example: `value: document.getElementById('...').value`
+                        value: total
                     }
                 }]
             });
         },
-
-        // Finalize the transaction after payer approval
         onApprove: function(data, actions) {
             return actions.order.capture().then(function(orderData) {
-                // Successful capture! For dev/demo purposes:
                 console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                var transaction = orderData.purchase_units[0].payments.captures[0];
-                alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+                let transaction = orderData.purchase_units[0].payments.captures[0];
+                popUp(2, "Transacción completada con éxito: <span class='smaller'>"+ transaction.id +"</span>");
 
                 // When ready to go live, remove the alert and show a success message within this page. For example:
                 // var element = document.getElementById('paypal-button-container');
@@ -103,6 +107,27 @@ function configPaypal(){
             });
         }
     }).render('#paypal-button-container');
+}
+
+/**
+ * @author Gabriel y Fran
+ * @version 03.2022
+ * @param id Id del pago.
+ */
+function confirmPayment(id) {
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4){
+            if (xhr.status === 200) {
+                products = JSON.parse(xhr.responseText);
+            }else{
+                popUp(3, "Algo ha ido mal.")
+            }
+        }
+    };
+    xhr.open("POST", "controller/store.controller.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(id)
 }
 
 loadProducts();
