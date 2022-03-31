@@ -108,6 +108,7 @@ section{
 
 nav{
     grid-area: nav;
+    z-index: 2000;
 }
 #navBar{
     display: none;

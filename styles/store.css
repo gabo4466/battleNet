@@ -165,9 +165,52 @@ input {
     top: 25px;
 }
 
+#redeem{
+    background: rgba(0, 116, 224, 0.37);
+    width: fit-content;
+    position: fixed;
+    right: 150px;
+    border-radius: 10px;
+    top: 25px;
+    cursor: pointer;
+}
+
+#redeem a{
+    font-size: x-large;
+    margin: 10px;
+    color: rgba(241, 241, 241, 0.7);
+
+}
+
+#redeem a:hover{
+    color: rgb(255, 255, 255);
+}
+
+
 #cart img{
     width: 50px;
     height: 50px;
+}
+
+.shop{
+    box-shadow: 0 2px #999;
+}
+
+.shop:active {
+    background-color: #3e8e41;
+    box-shadow: 0 0.5px #666;
+    transform: translateY(4px);
+}
+
+#popUp form{
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+#popUp form input{
+    width: 55px;
 }
 
 
@@ -179,6 +222,10 @@ tamaño Tablet (de 425 px a 1365px)
         top: 50px;
     }
 
+    #redeem{
+        top: 50px;
+    }
+
     #cart img{
         width: 80px;
         height: 80px;
@@ -187,6 +234,12 @@ tamaño Tablet (de 425 px a 1365px)
     #cart:hover{
         background: rgb(0, 116, 224);
     }
+
+    #redeem:hover{
+        background: rgb(0, 116, 224);
+    }
+
+
 
 }
 

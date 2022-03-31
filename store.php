@@ -18,6 +18,9 @@ require_once ("model/Store.class.php");
     <div id="cart">
         <a href="cart.php"><img src="assets/img/carrito-de-compras.png" alt="cart"></a>
     </div>
+    <div id="redeem">
+        <a onclick="redeemCode()">Canjear Código</a>
+    </div>
     <div id="search">
         <form name="formSearch" action="controller/login.controller.php" method="post">
             <input id="searchBar" type="search" name="productsearch" placeholder="Busca tu producto...">

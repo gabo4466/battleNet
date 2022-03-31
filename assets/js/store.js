@@ -68,3 +68,36 @@ function addProduct(id){
     }
 }
 
+/**
+ * @author Gabriel y Fran
+ * @version 03.2022
+ *
+ */
+function redeemCode(){
+    let popUpHtml = "<div class='box'>";
+    popUpHtml += "<div class='textPopUp'>Ingrese el código que desea canjear</div>";
+    popUpHtml += "<form name='frmRedeem' method='post' enctype='multipart/form-data'>";
+    popUpHtml += "<input name='cod1' maxlength='4'><span>-</span>";
+    popUpHtml += "<input name='cod2' maxlength='4'><span>-</span>";
+    popUpHtml += "<input name='cod3' maxlength='4'><span>-</span>";
+    popUpHtml += "<input name='cod4' maxlength='4'>";
+    popUpHtml += "</form>";
+    popUpHtml += "<div class='buttonPopUp'><button>Cerrar</button></div>";
+    popUpHtml += "</div>";
+    document.getElementById("popUp").innerHTML = popUpHtml;
+    document.getElementById("dimmer").style.display = "block";
+    let box = document.getElementById('popUp');
+    box.classList.remove('visualHidden');
+    let btn = box.querySelector('button');
+    btn.addEventListener('click', function () {
+        box.addEventListener('transitionend', function(e) {
+            document.getElementById("dimmer").style.display = "none";
+            document.getElementById("popUp").innerHTML = "";
+        }, {
+            capture: false,
+            once: true,
+            passive: false
+        });
+        box.classList.add('visualHidden');
+    }, false);
+}
