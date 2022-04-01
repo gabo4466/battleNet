@@ -71,18 +71,18 @@ function addProduct(id){
 /**
  * @author Gabriel y Fran
  * @version 03.2022
- *
+ * <p>Creacion de la ventana emergente que permite ingresar el codigo para canjear productos</p>
  */
-function redeemCode(){
+function redeemCodePopUp(){
     let popUpHtml = "<div class='box'>";
     popUpHtml += "<div class='textPopUp'>Ingrese el código que desea canjear</div>";
-    popUpHtml += "<form name='frmRedeem' method='post' enctype='multipart/form-data'>";
+    popUpHtml += "<form name='frmRedeem' action='controller/redeemCode.controller.php' method='post' enctype='multipart/form-data'>";
     popUpHtml += "<input name='cod1' maxlength='4'><span>-</span>";
     popUpHtml += "<input name='cod2' maxlength='4'><span>-</span>";
     popUpHtml += "<input name='cod3' maxlength='4'><span>-</span>";
     popUpHtml += "<input name='cod4' maxlength='4'>";
     popUpHtml += "</form>";
-    popUpHtml += "<div class='buttonPopUp'><button>Cerrar</button></div>";
+    popUpHtml += "<div class='buttonPopUp'><button type='button'>Cerrar</button><button type='button' onclick='redeemCode()'>Aceptar</button></div>";
     popUpHtml += "</div>";
     document.getElementById("popUp").innerHTML = popUpHtml;
     document.getElementById("dimmer").style.display = "block";
@@ -100,4 +100,9 @@ function redeemCode(){
         });
         box.classList.add('visualHidden');
     }, false);
+}
+
+
+function redeemCode(){
+    document.frmRedeem.submit();
 }

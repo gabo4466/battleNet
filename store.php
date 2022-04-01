@@ -19,7 +19,7 @@ require_once ("model/Store.class.php");
         <a href="cart.php"><img src="assets/img/carrito-de-compras.png" alt="cart"></a>
     </div>
     <div id="redeem">
-        <a onclick="redeemCode()">Canjear Código</a>
+        <a onclick="redeemCodePopUp()">Canjear Código</a>
     </div>
     <div id="search">
         <form name="formSearch" action="controller/login.controller.php" method="post">

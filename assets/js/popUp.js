@@ -20,7 +20,7 @@ function popUp(type, msg){
     let popUpHtml = "<div class='box'>";
     popUpHtml += "<div class='imgPopUp'><img src='assets/img/"+img+".png' alt='"+img+"'></div>";
     popUpHtml += "<div class='textPopUp'>"+msg+"</div>";
-    popUpHtml += "<div class='buttonPopUp'><button>Cerrar</button></div>";
+    popUpHtml += "<div class='buttonPopUp'><button type='button'>Cerrar</button></div>";
     popUpHtml += "</div>";
     document.getElementById("popUp").innerHTML = popUpHtml;
     document.getElementById("dimmer").style.display = "block";
