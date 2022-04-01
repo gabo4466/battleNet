@@ -4,20 +4,18 @@
 if (isset($_POST)){
 
     // Recoger Data
-    foreach ($_POST as $key => $value){
-        $$key = addslashes($value);
-    }
+    $code = $_POST['code'];
 
     // Instancia de objetos para validar la entrada
-    require_once "../model/LoginValidator.class.php";
-    $validator = new LoginValidator($email, $pwd);
+    require_once "../model/BuyProductsValidator.php";
+    /*
 
     // Controlar errores
     $validator->loginUser();
-    header("location: ../index.php?error=none");
-
+    header("location: ../store.php?error=none");
+    */
 }else{
-    header("location: ../login.php");
+    header("location: ../store.php");
     exit();
 }
 

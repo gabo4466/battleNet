@@ -14,6 +14,26 @@ class Store extends DBConnection {
         $this->productsList = $this->getProducts();
     }
 
+    /**
+     * Metodo que retorna un producto especifico segun un id.
+     * @author Gabriel y Fran
+     * @version 3.2022
+     * @param id el id del producto que se desea buscar.
+     * @return array Lista de productos en la base de datos.
+     */
+    public function getProduct($id){
+        $stmt = $this->connect()->prepare("SELECT id_products, products_name, products_prize, products_stock, products_desc, products_img, products_type FROM products WHERE id_products = ?;");
+        if (!$stmt->execute($id)){
+            $stmt = null;
+            $result = false;
+        }else{
+            $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $result = new Product($product[0]['products_name'], $product[0]['products_prize'], $product[0]['products_stock'], $product[0]['products_desc'], $product[0]['products_img'], $product[0]['products_type'], $product[0]['id_products']);
+
+        }
+        return $result;
+    }
+
 
     /**
      * Metodo que retorna todos los productos de la base de datos.
