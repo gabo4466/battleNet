@@ -13,7 +13,7 @@ class Forum extends ForumObj{
 
         $result = "";
 
-        $result .= "<a href='channel.php?forum=".$this->getId()."'>".$this->getName()."</a>";
+        $result .= "<a href='channel.php?forum=".$this->getId()."'>".$this->getName()."&nbsp;&nbsp;&nbsp;<span>(".$this->getDesc().")</span></a>";
 
         return $result;
     }

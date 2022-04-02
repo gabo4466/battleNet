@@ -4,7 +4,7 @@
 if (isset($_POST)){
 
     // Recoger Data
-    $code = $_POST['code'];
+    echo $code = $_POST['code'];
 
     // Instancia de objetos para validar la entrada
     require_once "../model/BuyProductsValidator.php";

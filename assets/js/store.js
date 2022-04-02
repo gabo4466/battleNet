@@ -78,9 +78,7 @@ function redeemCodePopUp(){
     popUpHtml += "<div class='textPopUp'>Ingrese el código que desea canjear</div>";
     popUpHtml += "<form name='frmRedeem' action='controller/redeemCode.controller.php' method='post' enctype='multipart/form-data'>";
     popUpHtml += "<input type='text' name='code1' maxlength='4'><span>-</span>";
-    popUpHtml += "<input type='text' name='code2' maxlength='4'><span>-</span>";
-    popUpHtml += "<input type='text' name='code3' maxlength='4'><span>-</span>";
-    popUpHtml += "<input type='text' name='code4' maxlength='4'>";
+    popUpHtml += "<input type='text' name='code2' maxlength='4'>";
     popUpHtml += "<input style='display: none' type='text' name='code'>";
     popUpHtml += "</form>";
     popUpHtml += "<div class='buttonPopUp'><button type='button'>Cerrar</button><button type='button' onclick='redeemCode()'>Aceptar</button></div>";
@@ -105,7 +103,7 @@ function redeemCodePopUp(){
 
 
 function redeemCode(){
-    document.getElementsByName('code')[0].value = document.getElementsByName('code1')[0].value + document.getElementsByName('code2')[0].value+document.getElementsByName('code3')[0].value+document.getElementsByName('code4')[0].value;
+    document.getElementsByName('code')[0].value = document.getElementsByName('code1')[0].value + document.getElementsByName('code2')[0].value;
     console.log(document.getElementsByName('code').value);
     document.frmRedeem.submit();
 }
