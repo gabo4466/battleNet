@@ -21,7 +21,6 @@ class BuyProducts extends DBConnection {
      * <li><strong>Falso</strong> si el codigo no existe o no esta disponible</li>
      */
     protected function checkCode($code){
-
         $stmt = $this->connect()->prepare('SELECT giftcards_unclaimed FROM giftcards WHERE giftcards_code = ?;');
         if (!$stmt->execute(array($code))){
             $stmt = null;
