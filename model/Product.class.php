@@ -10,6 +10,8 @@ class Product {
     private $type;
 
     /**
+     * @author Gabriel y Fran
+     * @version 03.2022
      * @param $id
      * @param $name
      * @param $desc
@@ -58,13 +60,17 @@ class Product {
         $result .= "<div class='prize'><p>".$this->getPrize()." €</p>";
         // Boton de compra o indicador de agotado
         if ($this->getStock() == 1){
-            $result .= "<a><img class='shop clickAble' src='assets/img/carrito-de-compras.png' alt='comprar'></a></div>";
+            $result .= "<a class='shop'><img class='clickAble' onclick='addProduct(".$this->getId().")' src='assets/img/anadir-al-carrito.png' alt='comprar'></a></div>";
         }else{
-            $result .= "<a><img class='shop notClickAble' src='assets/img/out-of-stock.png' alt='comprar'></a></div>";
+            $result .= "<a class='shop'><img class='notClickAble' src='assets/img/out-of-stock.png' alt='comprar'></a></div>";
         }
         $result .= "</div>";
 
         return $result;
+    }
+
+    public function associativeArray(){
+        return array("id"=>$this->id, "name"=>$this->name, "prize"=>$this->prize, "desc"=>$this->desc, "type"=>$this->type, "stock"=>$this->stock, "img"=>$this->img);
     }
 
 

@@ -1,3 +1,8 @@
+<?php
+session_start([
+    'read_and_close'  => true
+]);
+?>
 <meta charset="UTF-8">
 <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -6,4 +11,5 @@
 <link rel="shortcut icon" type="img/png" sizes="16x16" href="favicon-16x16.png">
 
 <link rel="stylesheet" href="./styles/style.css">
+<script src="./assets/js/popUp.js"></script>
 

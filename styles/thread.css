@@ -1,0 +1,73 @@
+/**
+tamaño smartphone (hasta 424px)
+ */
+
+section {
+    grid-template-columns: 5% 22% 46% 22% 5%;
+    grid-template-rows: 30px 50px 400px;
+    grid-template-areas:
+    ". . . . ."
+    ". . . button ."
+    "thread thread thread thread thread";
+
+}
+
+#threads {
+    display: flex;
+    flex-flow: wrap column;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-area: thread;
+
+}
+
+#threads a{
+    display: flex;
+    padding: 10px;
+    grid-area: thread;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    margin: 10px 5px 0px 5px;
+}
+
+#threads a:hover{
+    cursor: pointer;
+}
+
+#button {
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    flex-flow: row wrap;
+    grid-area: button;
+    width: 100px;
+}
+
+#button button {
+
+    width: 100px;
+    background-color: #000be0;
+    flex-grow: 2;
+    border: 1px rgba(0, 116, 224, 0.47) solid;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/**
+tamaño Tablet (de 425 px a 1365px)
+ */
+@media screen and (min-device-width: 425px){
+
+
+}
+
+
+/**
+tamaño Escritorio
+ */
+@media screen and (min-device-width: 1366px) {
+
+
+
+}

@@ -2,9 +2,9 @@
 require_once ("ForumObj.class.php");
 
 class Channel extends ForumObj{
-
-    public function __construct($name, $desc, $id="") {
-
+    private $idForum;
+    public function __construct($name, $desc, $id="", $idForum = "") {
+        $this->idForum = $idForum;
         parent::__construct($name, $desc, $id);
     }
 
@@ -13,7 +13,7 @@ class Channel extends ForumObj{
 
         $result = "";
 
-        $result .= "<a href='channel.php?forum=".$this->getId()."&channel=".$this->getId()."'>".$this->getName()."</a>";
+        $result .= "<a href='thread.php?forum=".$this->idForum."&channel=".$this->getId()."'>".$this->getName()."</a>";
 
         return $result;
     }

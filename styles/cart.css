@@ -1,0 +1,50 @@
+
+
+#tableContainer{
+    grid-area: table;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+#tableContainer h1{
+    border-bottom: #0074E0 2px solid;
+}
+
+.rowTotal{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: x-large;
+    margin-top: 5px;
+}
+
+#paypal-button-container{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    grid-area: paypal;
+}
+
+section{
+    grid-template-columns: auto 90% auto;
+    grid-template-rows: 30px 1fr;
+    grid-template-areas:
+    ". . ."
+    "table table table"
+    ". paypal .";
+}
+
+
+@media screen and (min-device-width: 600px){
+
+}
+
+
+
+
+
+
+
+

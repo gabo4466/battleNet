@@ -52,27 +52,4 @@ class Forums extends DBConnection{
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

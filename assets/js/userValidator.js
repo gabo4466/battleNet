@@ -2,17 +2,19 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const error = urlParams.get("error");
 if (error === "usernotfound"){
-    alert("Email y/o contraseña invalidos");
+    popUp(1, "Email y/o contraseña invalidos");
 }else if (error === "emptyinput"){
-    alert("Debes llenar todos los campos");
+    popUp(1, "Debes llenar todos los campos");
 }else if(error === "invalidname"){
-    alert("El nombre ingresado no es válido");
+    popUp(1, "El nombre ingresado no es válido");
 }else if(error === "invalidnickname"){
-    alert("El nickname ingresado no es válido");
+    popUp(1, "El nickname ingresado no es válido");
 }else if(error === "invalidemail"){
-    alert("El email ingresado no es válido");
+    popUp(1, "El email ingresado no es válido");
 }else if(error === "pwdmatch"){
-    alert("Las contraseñas no coinciden");
+    popUp(1, "Las contraseñas no coinciden");
+}else if(error === "none"){
+    popUp(2, "Te has registrado con éxito");
 }
 
 /**
@@ -79,23 +81,27 @@ function validateEmail(email){
  * @version 3.2022
  */
 function validateLogin(){
+    console.log("JOASKDAK")
     const inputs = document.getElementsByTagName("input");
     let valid = true;
     let index = 0;
     while(valid === true && index < inputs.length){
         if (inputs[index].value === ""){
             valid = false;
-
         }
         index++;
     }
+    console.log("EMPTY IMPUTS:" + valid)
     if (valid){
         valid = validateEmail(document.getElementsByName("email")[0].value);
         if (valid){
+            console.log("login")
             document.frmLogin.submit();
+        }else{
+            popUp(1, "El email ingresado no es válido");
         }
     }else{
-        alert("Debes llenar todos los campos.");
+        popUp(1, "Debes llenar todos los campos");
     }
 }
 
@@ -108,17 +114,20 @@ function validaSignUp(){
     const email = document.getElementsByName("email")[0].value.trim();
     if (!validaNIF(nif)){
         if (!validaNIE(nif)){
-            alert("NIF invalido");
+            popUp(1, "NIF invalido");
             valid = false;
         }
     }
     if (valid){
         valid = validateEmail(document.getElementsByName("email")[0].value);
         if (valid){
+
             document.frmSignUp.submit();
+        }else{
+            popUp(1, "El email ingresado no es válido");
         }
     }else{
-        alert("Debes llenar todos los campos.");
+        popUp(1, "Debes llenar todos los campos");
     }
 
 }
