@@ -11,9 +11,8 @@ section {
 
     display: grid;
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 1fr 60% 1fr;
+    grid-template-rows: 1fr 60%;
     grid-template-areas:
-    ". . ."
     ". slider ."
     ". . .";
 
@@ -71,10 +70,11 @@ tamaño Escritorio
 
         display: grid;
         grid-template-columns: 10% 80% 10%;
-        grid-template-rows: 1fr 60%;
+        grid-template-rows: 1fr 60% 1fr;
         grid-template-areas:
-        ". slider ."
-        ". . .";
+    ". . ."
+    ". slider ."
+    ". . .";
 
     }
 
