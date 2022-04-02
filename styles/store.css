@@ -39,8 +39,6 @@ section {
 #filters a{
     display: inline-block;
     width: 80px;
-    background: #0074E0;
-    border: 2px solid #0000;
     margin: 8px 0 0 12px;
     border-radius: 5px;
     padding: 0 6px;
@@ -75,9 +73,10 @@ input {
     display: flex;
     flex-flow: wrap column;
     justify-content: space-between;
-    background-color: #b6b6be;
+    background-color: #61617a;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 7.5px;
+    margin-top: 7.5px;
     margin-left: 5px;
     margin-right: 5px;
 
@@ -136,18 +135,109 @@ input {
      display: none;
  }
 
+ .selected{
+     background-color: rgba(0, 116, 224, 0.45);
+     color: #d5d5d5;
+     border: 2px solid #15171E;
+ }
+
+ .notSelected{
+     background: #0074E0;
+     border: 2px solid #0000;
+ }
+
  .type{
      font-size: small;
      display: inline-block;
      background: #0074E0;
      padding: 2px;
      border-radius: 5px;
+     margin-left: 10px;
+     cursor: default;
  }
+
+#cart{
+    background: rgba(0, 116, 224, 0.37);
+    width: fit-content;
+    position: fixed;
+    right: 25px;
+    border-radius: 10px;
+    top: 25px;
+}
+
+#redeem{
+    background: rgba(0, 116, 224, 0.37);
+    width: fit-content;
+    position: fixed;
+    right: 150px;
+    border-radius: 10px;
+    top: 25px;
+    cursor: pointer;
+}
+
+#redeem a{
+    font-size: x-large;
+    margin: 10px;
+    color: rgba(241, 241, 241, 0.7);
+
+}
+
+#redeem a:hover{
+    color: rgb(255, 255, 255);
+}
+
+
+#cart img{
+    width: 50px;
+    height: 50px;
+}
+
+.shop{
+    box-shadow: 0 2px #999;
+}
+
+.shop:active {
+    box-shadow: 0 0.5px #666;
+    transform: translateY(4px);
+}
+
+#popUp form{
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+#popUp form input{
+    width: 55px;
+}
+
 
 /**
 tamaño Tablet (de 425 px a 1365px)
  */
 @media screen and (min-device-width: 425px){
+    #cart{
+        top: 50px;
+    }
+
+    #redeem{
+        top: 50px;
+    }
+
+    #cart img{
+        width: 80px;
+        height: 80px;
+    }
+
+    #cart:hover{
+        background: rgb(0, 116, 224);
+    }
+
+    #redeem:hover{
+        background: rgb(0, 116, 224);
+    }
+
 
 
 }
@@ -159,7 +249,15 @@ tamaño Escritorio
 @media screen and (min-device-width: 1366px) {
 
     .card:hover{
-        box-shadow: 0 4px 8px 0 rgb(255, 255, 255);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.78);
+    }
+
+    #cart img{
+        opacity: 0.5;
+    }
+
+    #cart img:hover{
+        opacity: 1;
     }
 
 }

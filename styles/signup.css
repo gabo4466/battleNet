@@ -15,6 +15,7 @@ input{
     border: 1px rgba(0, 116, 224, 0.47) solid;
     border-radius: 1px;
     padding: 7px;
+     border-radius: 5px;
 }
 
 #formSignUp{

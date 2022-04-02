@@ -14,6 +14,26 @@ class Store extends DBConnection {
         $this->productsList = $this->getProducts();
     }
 
+    /**
+     * Metodo que retorna un producto especifico segun un id.
+     * @author Gabriel y Fran
+     * @version 3.2022
+     * @param id el id del producto que se desea buscar.
+     * @return array Lista de productos en la base de datos.
+     */
+    public function getProduct($id){
+        $stmt = $this->connect()->prepare("SELECT id_products, products_name, products_prize, products_stock, products_desc, products_img, products_type FROM products WHERE id_products = ?;");
+        if (!$stmt->execute($id)){
+            $stmt = null;
+            $result = false;
+        }else{
+            $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $result = new Product($product[0]['products_name'], $product[0]['products_prize'], $product[0]['products_stock'], $product[0]['products_desc'], $product[0]['products_img'], $product[0]['products_type'], $product[0]['id_products']);
+
+        }
+        return $result;
+    }
+
 
     /**
      * Metodo que retorna todos los productos de la base de datos.
@@ -56,5 +76,35 @@ class Store extends DBConnection {
     public function getProductsList() {
         return $this->productsList;
     }
+
+    /**
+     * Método que segun una lista de ids, devuelve una lista de productos.
+     * @author Gabriel y Fran
+     * @version 03.2022
+     * @param $ids lista de ids de productos.
+     */
+    public function findProducts($ids){
+        $result = array();
+        $error = false;
+        $i = 0;
+        while(!$error && $i < count($ids)){
+            $stmt = $this->connect()->prepare("SELECT id_products, products_name, products_prize, products_stock, products_desc, products_img, products_type FROM products WHERE id_products = ?;");
+            if (!$stmt->execute(array($ids[$i]))){
+                $stmt = null;
+                $result = [];
+                $error = true;
+            }else {
+                if ($stmt->rowCount() > 0) {
+
+                    $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    $product = new Product($product[0]['products_name'], $product[0]['products_prize'], $product[0]['products_stock'], $product[0]['products_desc'], $product[0]['products_img'], $product[0]['products_type'], $product[0]['id_products']);
+                    array_push($result, $product->associativeArray());
+                }
+            }
+            $i++;
+        }
+        return $result;
+    }
+
 
 }

@@ -2,9 +2,6 @@
 <head>
 <?php
     include "includes/head.php";
-    session_start([
-        'read_and_close'  => true
-    ]);
 ?>
     <link rel="stylesheet" href="styles/index.css">
 
@@ -62,6 +59,7 @@
 
 </head>
 <body>
+
 
 
 <?php
