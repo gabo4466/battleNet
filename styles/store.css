@@ -75,10 +75,7 @@ input {
     justify-content: space-between;
     background-color: #61617a;
     border-radius: 10px;
-    margin-bottom: 7.5px;
-    margin-top: 7.5px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: 7.5px 10px 45px 10px;
 
 }
 
@@ -107,6 +104,8 @@ input {
 
 .prize p{
     width: fit-content;
+    font-weight: bolder;
+    margin-bottom: 10px;
 }
 
 .card .prize a{
@@ -167,25 +166,23 @@ input {
 
 #redeem{
     background: rgba(0, 116, 224, 0.37);
-    width: fit-content;
     position: fixed;
-    right: 150px;
+    width: 70px;
+    right: 100px;
     border-radius: 10px;
+    padding: 5px;
     top: 25px;
     cursor: pointer;
 }
 
 #redeem a{
-    font-size: x-large;
-    margin: 10px;
-    color: rgba(241, 241, 241, 0.7);
-
-}
-
-#redeem a:hover{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: large;
     color: rgb(255, 255, 255);
-}
 
+}
 
 #cart img{
     width: 50px;
@@ -222,7 +219,9 @@ tamaño Tablet (de 425 px a 1365px)
     }
 
     #redeem{
-        top: 50px;
+        width: fit-content;
+        right: 150px;
+        top: 75px;
     }
 
     #cart img{
@@ -247,6 +246,14 @@ tamaño Tablet (de 425 px a 1365px)
 tamaño Escritorio
  */
 @media screen and (min-device-width: 1366px) {
+
+    #redeem a{
+        color: rgba(241, 241, 241, 0.7);
+    }
+
+    #redeem a:hover{
+        color: rgb(255, 255, 255);
+    }
 
     .card:hover{
         box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.78);

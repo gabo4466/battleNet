@@ -1,3 +1,15 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const error = urlParams.get("error");
+const redeem = urlParams.get("redeem");
+if (error === "invalidCode"){
+    popUp(3, "El código introducido no es válido.");
+}else if(error === "500"){
+    popUp(3, "Ups... Algo ha ido mal");
+}else if (redeem === "true"){
+    popUp(2, "Has canjeado el producto con éxito.")
+}
+
 let filter = 0;
 let cart = []
 const filters = document.getElementById("filters").children;
@@ -65,6 +77,10 @@ function addProduct(id){
     if (cart.indexOf(id) === -1){
         cart.push(id);
         sessionStorage.setItem("cart", JSON.stringify(cart));
+        popUp(2, "Has añadido un producto al carrito.")
+    }else{
+        popUp(1, "Ya posees este producto en el carrito.")
+
     }
 }
 
@@ -103,7 +119,7 @@ function redeemCodePopUp(){
 
 
 function redeemCode(){
-    document.getElementsByName('code')[0].value = document.getElementsByName('code1')[0].value + document.getElementsByName('code2')[0].value;
+    document.getElementsByName('code')[0].value = document.getElementsByName('code1')[0].value.toUpperCase() + document.getElementsByName('code2')[0].value.toUpperCase();
     console.log(document.getElementsByName('code').value);
     document.frmRedeem.submit();
 }
