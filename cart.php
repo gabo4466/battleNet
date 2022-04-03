@@ -16,8 +16,11 @@ include "includes/navbar.php";
 <section>
 
     <div id="tableContainer"><h1>Carrito de compra</h1></div>
-
     <div id="paypal-button-container"></div>
+    <form style="display: none" name="frmPurchase" action="controller/purchase.controller.php" method="post" enctype="multipart/form-data">
+        <input type="text" name="products">
+        <input type="text" name="transactionId">
+    </form>
 
 
 

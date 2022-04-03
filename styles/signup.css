@@ -11,11 +11,9 @@ input{
  button{
     background-color: #0074E0;
     outline: 0;
-    flex-grow: 1;
     border: 1px rgba(0, 116, 224, 0.47) solid;
-    border-radius: 1px;
     padding: 7px;
-     border-radius: 5px;
+    border-radius: 5px;
 }
 
 #formSignUp{

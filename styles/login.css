@@ -77,7 +77,6 @@ input {
 
 button {
     background-color: #0074E0;
-    flex-grow: 2;
     border: 1px rgba(0, 116, 224, 0.47) solid;
     padding: 10px;
     border-radius: 5px;
