@@ -95,7 +95,6 @@ class Store extends DBConnection {
                 $error = true;
             }else {
                 if ($stmt->rowCount() > 0) {
-
                     $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     $product = new Product($product[0]['products_name'], $product[0]['products_prize'], $product[0]['products_stock'], $product[0]['products_desc'], $product[0]['products_img'], $product[0]['products_type'], $product[0]['id_products']);
                     array_push($result, $product->associativeArray());
@@ -106,5 +105,26 @@ class Store extends DBConnection {
         return $result;
     }
 
+    /**
+     * Metodo que devuelve todos los productos que tiene comprado un usuario
+     * @param $id String id del usuario
+     * @return array Con la lista de productos
+     */
+    public function getProductsOfUser($id){
+        $stmt = $this->connect()->prepare("SELECT p.id_products as id, p.products_name as name, p.products_prize as prize, p.products_stock as stock, p.products_desc as description, p.products_img as img, p.products_type as type, up.purchase_date as date FROM users_has_products as up join products as p on p.id_products = up.fk_products WHERE up.fk_users = ? and p.id_products is not null;");
+        $result = array();
+        if (!$stmt->execute(array($id))){
+            $stmt = null;
+        }else{
+            $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $productsLength = sizeof($products);
+            for ($i = 0; $i < $productsLength; $i++){
+                $product = new Product($products[$i]['name'], $products[$i]['prize'], $products[$i]['stock'], $products[$i]['description'], $products[$i]['img'], $products[$i]['type'], $products[$i]['id']);
+                $product->setDate($products[$i]['date']);
+                array_push($result, $product->associativeArray());
+            }
+        }
+        return $result;
+    }
 
 }
