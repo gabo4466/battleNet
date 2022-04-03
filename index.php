@@ -25,6 +25,19 @@
         fotosDesktop[5] = new Image();
         fotosDesktop[5].src = "assets/img/heartstone.jpg";
 
+        fotosMobile[0] = new Image();
+        fotosMobile[0].src = "assets/img/wowmovil.jpg";
+        fotosMobile[1] = new Image();
+        fotosMobile[1].src = "assets/img/overwatchmovil.jpg";
+        fotosMobile[2] = new Image();
+        fotosMobile[2].src = "assets/img/diabloiiimovil.jpg";
+        fotosMobile[3] = new Image();
+        fotosMobile[3].src = "assets/img/diabloivmovil.jpg";
+        fotosMobile[4] = new Image();
+        fotosMobile[4].src = "assets/img/starcraftmovil.jpg";
+        fotosMobile[5] = new Image();
+        fotosMobile[5].src = "assets/img/hearthstonemovil.jpg";
+
         document.getElementById("mostrandoFoto").style.backgroundImage = "url('"+ fotosDesktop[0].src +"')";
         cambiaFoto();
     }
