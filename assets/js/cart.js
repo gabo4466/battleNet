@@ -7,7 +7,6 @@ let total = 0;
  */
 function getItems(data) {
     let xhr = new XMLHttpRequest();
-    console.log("asd")
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4){
             if (xhr.status === 200) {
@@ -21,6 +20,16 @@ function getItems(data) {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(data)
     setTimeout("console.log('Done')", 1000);
+}
+
+/**
+ * Funcion que prepara la informacion despues de la compra y llama al controlador
+ * @param Id de la transaccion de paypal
+ */
+function purchase(transactionId){
+    document.getElementsByName("products")[0].value = JSON.stringify(products);
+    document.getElementsByName("transactionId")[0].value = transactionId;
+    document.frmPurchase.submit();
 }
 
 /**
@@ -97,7 +106,8 @@ function configPaypal(){
             return actions.order.capture().then(function(orderData) {
                 console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
                 let transaction = orderData.purchase_units[0].payments.captures[0];
-                popUp(2, "Transacción completada con éxito: <span class='smaller'>"+ transaction.id +"</span>");
+                purchase(transaction);
+                //popUp(2, "Transacción completada con éxito: <span class='smaller'>"+ transaction.id +"</span>");
             });
         }
     }).render('#paypal-button-container');

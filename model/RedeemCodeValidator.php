@@ -19,6 +19,11 @@ class RedeemCodeValidator extends BuyProducts {
         $this->userId = $userId;
     }
 
+    /**
+     * Metodo que valida el codigo y en caso de que sea valido, le carga al usuario el producto vinculado con el codigo
+     * @author Gabriel y Fran
+     * @version 04.2022
+     */
     public function redeem(){
         if (!$this->checkCode($this->code)){
             header("location: ../store.php?error=invalidCode");

@@ -2,12 +2,15 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const error = urlParams.get("error");
 const redeem = urlParams.get("redeem");
+const purchase = urlParams.get("purchase");
 if (error === "invalidCode"){
     popUp(3, "El código introducido no es válido.");
 }else if(error === "500"){
     popUp(3, "Ups... Algo ha ido mal");
 }else if (redeem === "true"){
-    popUp(2, "Has canjeado el producto con éxito.")
+    popUp(2, "Has canjeado el producto con éxito.");
+}else if(purchase === "true"){
+    popUp(2, "Tu compra ha sido realizada con éxito.");
 }
 
 let filter = 0;
