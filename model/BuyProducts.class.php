@@ -17,10 +17,10 @@ class BuyProducts extends DBConnection {
      * Metodo que valida el codigo a canjear
      * @param $code
      * @return bool <ul>
-     * <li><strong>Verdadero</strong> si el codigo existe y esta disponible</li>
-     * <li><strong>Falso</strong> si el codigo no existe o no esta disponible</li>
+     * <li><strong>True</strong> si el codigo existe y esta disponible</li>
+     * <li><strong>False</strong> si el codigo no existe o no esta disponible</li>
      */
-    protected function checkCode($code){
+    protected function checkCode($code):bool{
         $stmt = $this->connect()->prepare('SELECT giftcards_unclaimed FROM giftcards WHERE giftcards_code = ?;');
         if (!$stmt->execute(array($code))){
             $stmt = null;
@@ -46,10 +46,10 @@ class BuyProducts extends DBConnection {
 
     /**
      * Metodo que carga el producto vinculado al codigo al usuario
-     * @param $code codigo del producto
-     * @param $userId id del usuario que tiene la sesion iniciada
+     * @param $code String codigo del producto
+     * @param $userId String id del usuario que tiene la sesion iniciada
      */
-    protected function useCode($code, $userId){
+    protected function useCode(String $code, String $userId){
         $stmt = $this->connect()->prepare('UPDATE giftcards SET giftcards_unclaimed = 1 WHERE giftcards_code = ?;');
         if (!$stmt->execute(array($code))){
             $stmt = null;
@@ -73,14 +73,15 @@ class BuyProducts extends DBConnection {
 
     /**
      * Metodo que inserta un producto a un usuario
-     * @param $userId
-     * @param $productId
-     * @param $date
+     * @author Gabriel y Fran
+     * @version 04.2022
+     * @param $userId String id del usuario
+     * @param $productId String id del producto
      * @return bool <ul>
      * <li><strong>Verdadero</strong> si se ha realizado con éxito</li>
      * <li><strong>Falso</strong> si ha ocurrido algún fallo</li>
      */
-    protected function insertProduct($userId, $productId){
+    protected function insertProduct($userId, $productId):bool{
         $date = date('Y-m-d');
         $stmt = $this->connect()->prepare('INSERT INTO users_has_products (fk_users, fk_products, purchase_date) VALUES (?, ?, ?)');
         if (!$stmt->execute(array($userId, $productId, $date))){

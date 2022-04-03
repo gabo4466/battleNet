@@ -8,6 +8,7 @@ class Product {
     private $stock;
     private $img;
     private $type;
+    private $date;
 
     /**
      * @author Gabriel y Fran
@@ -27,6 +28,7 @@ class Product {
         $this->stock = $stock;
         $this->type = $type;
         $this->img = $img;
+        $this->date = "";
     }
 
     /**
@@ -175,5 +177,18 @@ class Product {
         $this->type = $type;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getDate() {
+        return $this->date;
+    }
+
+    /**
+     * @param mixed $date
+     */
+    public function setDate($date): void {
+        $this->date = $date;
+    }
 
 }

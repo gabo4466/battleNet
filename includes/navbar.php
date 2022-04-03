@@ -21,6 +21,7 @@
         ?>
             <!-- PARTE PRIVADA DE LA WEB -->
             <a class='navOption' href='forum.php'>Foro</a>
+            <a class='navOption' href='controller/userProducts.controller.php'>Mis compras</a>
             <a class='navOption' href='controller/logout.controller.php'>Cerrar sesión</a>
         <?php
             }else{
