@@ -21,12 +21,19 @@ section {
 }
 
 #channels a{
+    text-decoration: none;
+    font-size: large;
     display: flex;
     padding: 10px;
     grid-area: channel;
     justify-content: center;
     border: 2px solid #ffffff;
     margin: 10px 5px 0px 5px;
+}
+
+#channels a span{
+    font-size: small;
+
 }
 
 #channels a:hover{

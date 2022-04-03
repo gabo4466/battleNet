@@ -14,11 +14,13 @@
         <a id="closeNavBar" href="javascript:void(0)" onclick="closeNav()">&times;</a>
         <a class="navOption imgOption" href="index.php"><img src="assets/img/battlenet_logo.png" alt="BattleNet Logo"></a>
         <a class="navOption textOption" href="index.php">Inicio</a>
+        <a class='navOption' href='store.php'>Tienda</a>
         <?php
 
             if (isset($_SESSION["userId"])){
         ?>
             <!-- PARTE PRIVADA DE LA WEB -->
+            <a class='navOption' href='forum.php'>Foro</a>
             <a class='navOption' href='controller/logout.controller.php'>Cerrar sesión</a>
         <?php
             }else{
@@ -26,8 +28,7 @@
             <!-- PARTE PUBLICA DE LA WEB -->
             <a class="navOption" href="login.php">Iniciar Sesión</a>
             <a class='navOption' href='signup.php'>Registro</a>
-            <a class='navOption' href='store.php'>Tienda</a>
-            <a class='navOption' href='forum.php'>Foro</a>
+
         <?php
             }
         ?>

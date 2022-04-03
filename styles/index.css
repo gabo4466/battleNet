@@ -15,7 +15,6 @@ section {
     grid-template-areas:
     ". slider ."
     ". . .";
-
 }
 
 #contenedor {
@@ -26,8 +25,15 @@ section {
     align-self: center;
 }
 
-#mostrandoFoto {
+#fotoGrande{
 
+    width: 100%;
+}
+
+#mostrandoFoto {
+    width: 0;
+    height: 500px;
+    transition: width 4s;
     display: flex;
     object-fit: cover;
     flex-flow: column wrap;
@@ -70,10 +76,11 @@ tamaño Escritorio
 
         display: grid;
         grid-template-columns: 10% 80% 10%;
-        grid-template-rows: 1fr 60%;
+        grid-template-rows: 1fr 60% 1fr;
         grid-template-areas:
-        ". slider ."
-        ". . .";
+    ". . ."
+    ". slider ."
+    ". . .";
 
     }
 
