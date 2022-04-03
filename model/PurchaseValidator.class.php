@@ -21,6 +21,9 @@ class PurchaseValidator extends BuyProducts {
         $this->userId = $userId;
     }
 
+    /**
+     * Metodo que realiza las validaciones necesarias de la compra y carga los productos al usuario
+     */
     public function purchase(){
         //FALTA LA CAPA DE SEGURIDAD DE LA TRANSACCION DE PAYPAL!!!!!
         foreach ($this->products as $product){
