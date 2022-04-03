@@ -13,7 +13,7 @@ class Channel extends ForumObj{
 
         $result = "";
 
-        $result .= "<a href='thread.php?forum=".$this->idForum."&channel=".$this->getId()."'>".$this->getName()."</a>";
+        $result .= "<a href='thread.php?forum=".$this->idForum."&channel=".$this->getId()."'>".$this->getName()."&nbsp;&nbsp;&nbsp;<span>(".$this->getDesc().")</span></a>";
 
         return $result;
     }
