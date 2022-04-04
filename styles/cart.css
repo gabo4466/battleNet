@@ -1,14 +1,13 @@
-
-
-#tableContainer{
-    grid-area: table;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
+.table{
+    width: 300px;
 }
 
-#tableContainer h1{
-    border-bottom: #0074E0 2px solid;
+.column:nth-child(1){
+    width: 150px;
+}
+
+.column{
+    width: 75px;
 }
 
 .rowTotal{
