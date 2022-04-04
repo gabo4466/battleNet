@@ -9,6 +9,7 @@ tamaño smartphone (hasta 424px)
 
 section {
 
+    margin-top: 30px;
     display: grid;
     grid-template-columns: 10% 80% 10%;
     grid-template-rows: 1fr 60%;

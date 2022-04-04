@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/**
+tamaño smartphone (hasta 599px)
+ */
+
+
+
+
+
+section {
+
+    display: grid;
+    grid-template-columns: 10% 60% 10%;
+    grid-template-rows: 5% 1fr 1fr 5%;
+    grid-template-areas:
+    ". . ."
+    ". image ."
+    ". image2 ."
+    ". . .";
+
+}
+
+
+
+
+#overwatchImage {
+
+    display: flex;
+    padding: 3px 10px 3px 70px;
+    flex-wrap: wrap;
+    grid-area: image;
+    justify-content: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+#overwatchImage img{
+
+    padding: 5px;
+}
+
+#overwatchImage2 {
+
+    display: flex;
+    padding: 3px 10px 3px 70px;
+    flex-wrap: wrap;
+    grid-area: image2;
+    justify-content: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+#overwatchImage2 img{
+
+    padding: 5px;
+}
+
+#overwatchImage #mamon {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    padding:10px;
+    margin:0;
+}
+
+#overwatchImage2 a {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    padding:10px;
+    margin:0;
+}
+
+.desvanecer:hover {
+    opacity: 0.07;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    -ms-transition: opacity 500ms;
+    transition: opacity 500ms;
+}
+
+
+
+/**
+tamaño Tablet (de 600 px a 1365px)
+ */
+@media screen and (min-device-width: 600px){
+
+
+
+}
+
+
+/**
+tamaño Escritorio
+ */
+@media screen and (min-device-width: 1366px) {
+
+    #overwatchImage {
+
+        padding: 5px 1px 5px 200px;
+    }
+
+    #overwatchImage2 {
+
+        padding: 5px 1px 5px 200px;
+    }
+
+
+
+}

@@ -16,6 +16,14 @@ function popUp(type, msg){
         img = "check";
     }else if(type === 3){
         img = "cross";
+    }else if(type === 4){
+        img = "faceMei";
+    }else if (type === 5){
+        img = "facePharah";
+    }else if (type === 6){
+        img = "faceTracer";
+    }else if (type === 7){
+        img = "faceRoadHog";
     }
     let popUpHtml = "<div class='box'>";
     popUpHtml += "<div class='imgPopUp'><img src='assets/img/"+img+".png' alt='"+img+"'></div>";
