@@ -15,6 +15,7 @@
         <a class="navOption imgOption" href="index.php"><img src="assets/img/battlenet_logo.png" alt="BattleNet Logo"></a>
         <a class="navOption textOption" href="index.php">Inicio</a>
         <a class='navOption' href='store.php'>Tienda</a>
+        <a class="navOption" href="overwatch.php">Overwatch</a>
         <?php
 
             if (isset($_SESSION["userId"])){
@@ -27,7 +28,6 @@
             }else{
         ?>
             <!-- PARTE PUBLICA DE LA WEB -->
-            <a class="navOption" href="overwatch.php">Overwatch</a>
             <a class="navOption" href="login.php">Iniciar Sesión</a>
             <a class='navOption' href='signup.php'>Registro</a>
 
