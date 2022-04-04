@@ -27,6 +27,7 @@
             }else{
         ?>
             <!-- PARTE PUBLICA DE LA WEB -->
+            <a class="navOption" href="overwatch.php">Overwatch</a>
             <a class="navOption" href="login.php">Iniciar Sesión</a>
             <a class='navOption' href='signup.php'>Registro</a>
 
