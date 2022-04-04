@@ -82,18 +82,13 @@ section{
 }
 
 .table{
+    margin-top: 30px;
     display: flex;
     flex-flow: column wrap;
-    width: 300px;
-}
-
-.column:nth-child(1){
-    width: 150px;
 }
 
 .column{
     text-align: center;
-    width: 75px;
 }
 
 .row{
@@ -108,6 +103,17 @@ section{
 .tableHeader{
     font-size: large;
     font-weight: bold;
+}
+
+#tableContainer{
+    grid-area: table;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+#tableContainer h1{
+    border-bottom: #0074E0 2px solid;
 }
 
 @media screen and (min-device-width: 600px){
