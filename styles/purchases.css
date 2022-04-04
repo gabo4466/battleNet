@@ -37,6 +37,7 @@ section{
     }
 
     .column{
+        font-size: medium;
         width: 146px;
     }
 }
