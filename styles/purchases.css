@@ -1,0 +1,42 @@
+section{
+    grid-template-columns: auto 90% auto;
+    grid-template-rows: 30px 1fr;
+    grid-template-areas:
+    ". . ."
+    "table table table"
+    ". . .";
+}
+
+.table{
+    width: 300px;
+    margin-bottom: 50px;
+}
+
+.column:nth-child(1){
+    width: 100px;
+}
+
+.column{
+    width: 66px;
+    font-size: small;
+}
+
+@media screen and (max-device-width: 300px){
+    .column{
+        font-size: x-small;
+    }
+}
+
+@media screen and (min-device-width: 600px){
+    .table{
+        width: 600px;
+    }
+
+    .column:nth-child(1){
+        width: 162px;
+    }
+
+    .column{
+        width: 146px;
+    }
+}
